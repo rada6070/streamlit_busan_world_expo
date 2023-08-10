@@ -1,4 +1,8 @@
-Pillow
-pycaret
-streamlit==1.11.1
-streamlit_option_menu==0.3.2
+streamlit
+streamlit_option_menu
+pandas
+numpy
+io
+streamlit.components.v1
+plotly.express
+PIL
