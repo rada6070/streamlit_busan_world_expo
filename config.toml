@@ -1,0 +1,5 @@
+# config.toml 파일
+[theme]
+textColor = "black"
+primaryColor = "blue" 			# theme
+secondaryBackgroundColor = "skyblue"      # sidebar
