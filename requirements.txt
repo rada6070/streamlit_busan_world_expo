@@ -1,8 +1,0 @@
-streamlit
-streamlit_option_menu
-pandas
-numpy
-io
-streamlit.components.v1
-plotly.express
-PIL
