@@ -41,8 +41,8 @@ st.markdown("""
 
 
 with st.sidebar:
-    choose = option_menu("부산 2030 월드 엑스포", ["부산 월드 엑스포 홍보", "부산 선호 관심사", "부산의 지도", "부산 관광지 그래프"],
-                         icons=['house', 'people', 'map', 'bar-chart'],
+    choose = option_menu("부산 2030 월드 엑스포", ["부산 월드 엑스포 홍보", "부산의 지도", "부산 관광지 그래프"],
+                         icons=['house', 'map', 'bar-chart'],
                          menu_icon="bi bi-menu-up", default_index=0,
                          styles={
         "menu-title": {"color": "black"},
@@ -84,39 +84,6 @@ if choose == "부산 월드 엑스포 홍보" :
     st.subheader("더 알아보기")
     st.write("공식 웹사이트에서 더 많은 정보를 확인하세요:")
     st.write("[부산 월드 엑스포 2030 공식 웹사이트](https://www.expo2030busan.kr/index.do)")
-
-if choose == "부산 선호 관심사" :
-    # 투표용 데이터
-    options = {
-        '감천 문화 마을': 0,
-        '자갈치 시장': 0,
-        '국제 시장': 0,
-        '부전 시장': 0,
-    }
-
-    # 투표 기능
-    def vote(option):
-        options[option] += 1
-
-    # 메인 앱
-    def main():
-        st.title("선호 관심사 랭킹")
-
-        # 투표 및 결과 표시
-        st.header("투표")
-        selected_option = st.radio("당신의 선택은?", list(options.keys()))
-        if st.button("확인"):
-            vote(selected_option)
-            st.success(f'당신의 투표: {selected_option}')
-
-        # 랭킹 표시
-        st.header("랭킹")
-        sorted_options = sorted(options.items(), key=lambda x: x[1], reverse=True)
-        for i, (option, count) in enumerate(sorted_options, start=1):
-            st.write(f"{i}. {option}: {count} 표")
-
-    if __name__ == "__main__":
-        main()
 
 if choose == "부산의 지도" :
     st.title('부산의 지도') 
