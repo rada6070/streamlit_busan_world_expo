@@ -135,4 +135,4 @@ if choose == "부산 관광지 그래프" :
         np.random.randn(20, 4),
         columns=['감천 문화 마을', '자갈치 시장', '국제 시장', '부전 시장'])
 
-    st.line_chart(chart_data)
+    st.bar_chart(chart_data)
