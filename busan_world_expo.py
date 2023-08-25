@@ -131,7 +131,7 @@ if choose == "부산의 지도" :
     ## 데이터를 사용하여 지도 생성
     st.map(data)
 
-if choose == "부산 관광지 그래프" :
+if choose == "부산 관광지 선호도 그래프" :
     st.title('부산 관광지 선호도 그래프')
     chart_data = pd.DataFrame(
         np.random.randn(20, 4),
