@@ -28,59 +28,58 @@ sl_box = [ 'English', '한국어' ]
 
 sl_sc = st.sidebar.selectbox( 'lang select' , sl_box )
 
-global side_bar_main
-global side_bar_sub_1
-global side_bar_sub_2
-global side_bar_sub_3
+if sl_sc == sl_box[0] :
+        global side_bar_main
+        global side_bar_sub_1
+        global side_bar_sub_2
+        global side_bar_sub_3
 
-global page_1_title
-global page_1_explain_1
+        global page_1_title
+        global page_1_explain_1
 
-global page_1_subheader_1
-global page_1_explain_when
-global page_1_explain_where
-global page_1_explain_thema
+        global page_1_subheader_1
+        global page_1_explain_when
+        global page_1_explain_where
+        global page_1_explain_thema
 
-global page_1_image_gall
+        global page_1_image_gall
 
-global page_1_subheader_2
-global page_1_explain_2
+        global page_1_subheader_2
+        global page_1_explain_2
 
-global page_2_title
+        global page_2_title
 
-global page_3_title
-global page_3_columns_1
-global page_3_columns_2
-global page_3_columns_3
-global page_3_columns_4
+        global page_3_title
+        global page_3_columns_1
+        global page_3_columns_2
+        global page_3_columns_3
+        global page_3_columns_4
 
-side_bar_main = "부산 2030 월드 엑스포"
-side_bar_sub_1 = "부산 월드 엑스포 홍보"
-side_bar_sub_2 = "부산의 지도"
-side_bar_sub_3 = "부산 관광지 선호도 그래프"
+        side_bar_main = "Busan 2030 World Expo"
+        side_bar_sub_1 = "Promotion of Busan World Expo"
+        side_bar_sub_2 = "Map of Busan"
+        side_bar_sub_3 = "Busan Tourist Site Preference Graph"
 
-page_1_title = "부산 2030 월드 엑스포"
-page_1_explain_1 = "부산 월드 엑스포 2030은 세계 각국의 문화와 기술을 전시하는 국제 행사입니다."
+        page_1_title = "Promotion of Busan World Expo"
+        page_1_explain_1 = "Busan World Expo 2030 is an international event that displays cultures and technologies from around the world."
 
-page_1_subheader_1 = "주요 행사 정보"
-page_1_explain_when = "날짜: 2030년 5월 1일 - 10월 31일"
-page_1_explain_where = "장소: 부산, 대한민국"
-page_1_explain_thema = "테마: '새로운 세계를 여는 혁신과 지속가능성'"
+        page_1_subheader_1 = "Key Event Information"
+        page_1_explain_when = "Date: May 1, 2030 - October 31, 2030"
+        page_1_explain_where = "Location: Busan, South Korea"
+        page_1_explain_thema = "Theme: 'Innovation and Sustainability Opening a New World'"
 
-page_1_image_gall = "이미지 갤러리"
+        page_1_image_gall = "Image Gallery"
 
-page_1_subheader_2 = "더 알아보기"
-page_1_explain_2 = "공식 웹사이트에서 더 많은 정보를 확인하세요:"
+        page_1_subheader_2 = "Learn more information"
+        page_1_explain_2 = "Check out the official website for more information:"
 
-page_2_title = "부산의 지도"
+        page_2_title = "Map of Busan"
 
-page_3_title = "부산 관광지 선호도 그래프"
-page_3_columns_1 = "감천 문화 마을"
-page_3_columns_2 = "자갈치 시장"
-page_3_columns_3 = "국제 시장"
-page_3_columns_4 = "부전 시장"
-
-
+        page_3_title = "Busan Tourist Site Preference Graph"
+        page_3_columns_1 = "Gamcheon Culture Village"
+        page_3_columns_2 = "Jagalchi Market"
+        page_3_columns_3 = "International Market"
+        page_3_columns_4 = "Bujeon Market"
 
 st.markdown("""
         <style>
