@@ -81,60 +81,6 @@ page_3_columns_3 = "국제 시장"
 page_3_columns_4 = "부전 시장"
 
 
-if sl_sc == 'English' :
-        global side_bar_main
-        global side_bar_sub_1
-        global side_bar_sub_2
-        global side_bar_sub_3
-
-        global page_1_title
-        global page_1_explain_1
-
-        global page_1_subheader_1
-        global page_1_explain_when
-        global page_1_explain_where
-        global page_1_explain_thema
-
-        global page_1_image_gall
-
-        global page_1_subheader_2
-        global page_1_explain_2
-
-        global page_2_title
-
-        global page_3_title
-        global page_3_columns_1
-        global page_3_columns_2
-        global page_3_columns_3
-        global page_3_columns_4
-
-        side_bar_main = "Busan 2030 World Expo"
-        side_bar_sub_1 = "Promotion of Busan World Expo"
-        side_bar_sub_2 = "Map of Busan"
-        side_bar_sub_3 = "Busan Tourist Site Preference Graph"
-
-        page_1_title = "Promotion of Busan World Expo"
-        page_1_explain_1 = "Busan World Expo 2030 is an international event that displays cultures and technologies from around the world."
-
-        page_1_subheader_1 = "Key Event Information"
-        page_1_explain_when = "Date: May 1, 2030 - October 31, 2030"
-        page_1_explain_where = "Location: Busan, South Korea"
-        page_1_explain_thema = "Theme: 'Innovation and Sustainability Opening a New World'"
-
-        page_1_image_gall = "Image Gallery"
-
-        page_1_subheader_2 = "Learn more information"
-        page_1_explain_2 = "Check out the official website for more information:"
-
-        page_2_title = "Map of Busan"
-
-        page_3_title = "Busan Tourist Site Preference Graph"
-        page_3_columns_1 = "Gamcheon Culture Village"
-        page_3_columns_2 = "Jagalchi Market"
-        page_3_columns_3 = "International Market"
-        page_3_columns_4 = "Bujeon Market"
-
-
 
 st.markdown("""
         <style>
@@ -217,3 +163,8 @@ if choose == side_bar_sub_3 :
         columns=[page_3_columns_1, page_3_columns_2, page_3_columns_3, page_3_columns_4])
 
     st.bar_chart(chart_data)
+
+
+
+
+
