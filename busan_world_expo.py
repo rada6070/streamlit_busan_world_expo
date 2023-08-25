@@ -22,7 +22,38 @@ import io
 
 # Remove whitespace from the top of the page and sidebar
 
+#언어 셀렉트 박스 변수
+
 sl_box = [ 'English', '한국어' ]
+
+
+#문자 변수
+
+side_bar_main = "부산 2030 월드 엑스포"
+side_bar_sub_1 = "부산 월드 엑스포 홍보"
+side_bar_sub_2 = "부산의 지도"
+side_bar_sub_3 = "부산 관광지 선호도 그래프"
+
+page_1_title = "부산 2030 월드 엑스포"
+page_1_explain_1 = "부산 월드 엑스포 2030은 세계 각국의 문화와 기술을 전시하는 국제 행사입니다."
+
+page_1_subheader_1 = "주요 행사 정보"
+page_1_explain_when = "날짜: 2030년 5월 1일 - 10월 31일"
+page_1_explain_where = "장소: 부산, 대한민국"
+page_1_explain_thema = "테마: '새로운 세계를 여는 혁신과 지속가능성'"
+
+page_1_subheader_2 = "더 알아보기"
+page_1_explain_2 = "공식 웹사이트에서 더 많은 정보를 확인하세요:"
+
+page_2_title = "부산의 지도"
+
+page_3_title = "부산 관광지 선호도 그래프"
+page_3_columns_1 = "감천 문화 마을"
+page_3_columns_2 = "자갈치 시장"
+page_3_columns_3 = "국제 시장"
+page_3_columns_4 = "부전 시장"
+
+
 
 st.markdown("""
         <style>
@@ -43,7 +74,7 @@ st.markdown("""
 
 
 with st.sidebar:
-    choose = option_menu("부산 2030 월드 엑스포", ["부산 월드 엑스포 홍보", "부산의 지도", "부산 관광지 그래프"],
+    choose = option_menu(side_bar_main, [side_bar_sub_1, side_bar_sub_2, side_bar_sub_3],
                          icons=['house', 'map', 'bar-chart'],
                          menu_icon="bi bi-menu-up", default_index=0,
                          styles={
@@ -59,9 +90,9 @@ st.sidebar.image("https://i.namu.wiki/i/tvGyhYywWMsAcu6DB_LNqDgXsPeaXzDt4Su8mc8p
 
 st.sidebar.selectbox( 'lang select' , sl_box )
 
-if choose == "부산 월드 엑스포 홍보" :
+if choose == side_bar_sub_1 :
     # 페이지 제목과 부산 월드 엑스포 2030 로고 이미지 표시
-    st.title("부산 월드 엑스포 2030")
+    st.title(side_bar_sub_1)
     st.image("https://image.edaily.co.kr/images/Photo/files/NP/S/2022/06/PS22062300100.jpg", use_column_width=True)
 
     # 월드 엑스포 2030에 대한 간단한 설명 추가
