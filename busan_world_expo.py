@@ -81,7 +81,7 @@ if sl_sc == sl_box[0] :
         page_3_columns_3 = "International Market"
         page_3_columns_4 = "Bujeon Market"
 
-elif sl_sc == sl_box[1] :
+if sl_sc == sl_box[1] :
         global side_bar_main
         global side_bar_sub_1
         global side_bar_sub_2
