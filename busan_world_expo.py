@@ -57,7 +57,7 @@ with st.sidebar:
 
 st.sidebar.image("https://i.namu.wiki/i/tvGyhYywWMsAcu6DB_LNqDgXsPeaXzDt4Su8mc8pckqINu1ceRlXh6mqVaquCFE9vCBk9Pduf9xkzWr0gcC_Ng.svg", use_column_width=True)
 
-st.sidebar.selectbox( sl_box )
+st.sidebar.selectbox( 'lang select' , sl_box )
 
 if choose == "부산 월드 엑스포 홍보" :
     # 페이지 제목과 부산 월드 엑스포 2030 로고 이미지 표시
