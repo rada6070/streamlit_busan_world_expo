@@ -26,8 +26,33 @@ import io
 
 sl_box = [ 'English', '한국어' ]
 
+sl_sc = st.sidebar.selectbox( 'lang select' , sl_box )
 
-#문자 변수
+global side_bar_main
+global side_bar_sub_1
+global side_bar_sub_2
+global side_bar_sub_3
+
+global page_1_title
+global page_1_explain_1
+
+global page_1_subheader_1
+global page_1_explain_when
+global page_1_explain_where
+global page_1_explain_thema
+
+global page_1_image_gall
+
+global page_1_subheader_2
+global page_1_explain_2
+
+global page_2_title
+
+global page_3_title
+global page_3_columns_1
+global page_3_columns_2
+global page_3_columns_3
+global page_3_columns_4
 
 side_bar_main = "부산 2030 월드 엑스포"
 side_bar_sub_1 = "부산 월드 엑스포 홍보"
@@ -55,42 +80,6 @@ page_3_columns_2 = "자갈치 시장"
 page_3_columns_3 = "국제 시장"
 page_3_columns_4 = "부전 시장"
 
-
-
-st.markdown("""
-        <style>
-               .css-18e3th9 {
-                    padding-top: 0rem;
-                    padding-bottom: 10rem;
-                    padding-left: 5rem;
-                    padding-right: 5rem;
-                }
-               .css-1d391kg {
-                    padding-top: 3.5rem;
-                    padding-right: 1rem;
-                    padding-bottom: 3.5rem;
-                    padding-left: 1rem;
-                }
-        </style>
-        """, unsafe_allow_html=True)
-
-
-with st.sidebar:
-    choose = option_menu(side_bar_main, [side_bar_sub_1, side_bar_sub_2, side_bar_sub_3],
-                         icons=['house', 'map', 'bar-chart'],
-                         menu_icon="bi bi-menu-up", default_index=0,
-                         styles={
-        "menu-title": {"color": "black"},
-        "container": {"padding": "5!important", "color": "black", "background-color": "#fafafa"},
-        "icon": {"color": "orange", "font-size": "25px"}, 
-        "nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "color": "black", "--hover-color": "#eee"},
-        "nav-link-selected": {"background-color": "#02ab21"},
-    }
-    )
-
-st.sidebar.image("https://i.namu.wiki/i/tvGyhYywWMsAcu6DB_LNqDgXsPeaXzDt4Su8mc8pckqINu1ceRlXh6mqVaquCFE9vCBk9Pduf9xkzWr0gcC_Ng.svg", use_column_width=True)
-
-sl_sc = st.sidebar.selectbox( 'lang select' , sl_box )
 
 if sl_sc == 'English' :
         global side_bar_main
@@ -144,7 +133,41 @@ if sl_sc == 'English' :
         page_3_columns_2 = "Jagalchi Market"
         page_3_columns_3 = "International Market"
         page_3_columns_4 = "Bujeon Market"
-        
+
+
+
+st.markdown("""
+        <style>
+               .css-18e3th9 {
+                    padding-top: 0rem;
+                    padding-bottom: 10rem;
+                    padding-left: 5rem;
+                    padding-right: 5rem;
+                }
+               .css-1d391kg {
+                    padding-top: 3.5rem;
+                    padding-right: 1rem;
+                    padding-bottom: 3.5rem;
+                    padding-left: 1rem;
+                }
+        </style>
+        """, unsafe_allow_html=True)
+
+
+with st.sidebar:
+    choose = option_menu(side_bar_main, [side_bar_sub_1, side_bar_sub_2, side_bar_sub_3],
+                         icons=['house', 'map', 'bar-chart'],
+                         menu_icon="bi bi-menu-up", default_index=0,
+                         styles={
+        "menu-title": {"color": "black"},
+        "container": {"padding": "5!important", "color": "black", "background-color": "#fafafa"},
+        "icon": {"color": "orange", "font-size": "25px"}, 
+        "nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "color": "black", "--hover-color": "#eee"},
+        "nav-link-selected": {"background-color": "#02ab21"},
+    }
+    )
+
+st.sidebar.image("https://i.namu.wiki/i/tvGyhYywWMsAcu6DB_LNqDgXsPeaXzDt4Su8mc8pckqINu1ceRlXh6mqVaquCFE9vCBk9Pduf9xkzWr0gcC_Ng.svg", use_column_width=True)
 
 if choose == side_bar_sub_1 :
     # 페이지 제목과 부산 월드 엑스포 2030 로고 이미지 표시
