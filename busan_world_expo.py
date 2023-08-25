@@ -82,7 +82,32 @@ if sl_sc == sl_box[0] :
         page_3_columns_4 = "Bujeon Market"
 
 elif sl_sc == sl_box[1] :
+        global side_bar_main
+        global side_bar_sub_1
+        global side_bar_sub_2
+        global side_bar_sub_3
 
+        global page_1_title
+        global page_1_explain_1
+
+        global page_1_subheader_1
+        global page_1_explain_when
+        global page_1_explain_where
+        global page_1_explain_thema
+
+        global page_1_image_gall
+
+        global page_1_subheader_2
+        global page_1_explain_2
+
+        global page_2_title
+
+        global page_3_title
+        global page_3_columns_1
+        global page_3_columns_2
+        global page_3_columns_3
+        global page_3_columns_4
+        
         side_bar_main = "부산 2030 월드 엑스포"
         side_bar_sub_1 = "부산 월드 엑스포 홍보"
         side_bar_sub_2 = "부산의 지도"
