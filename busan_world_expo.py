@@ -87,7 +87,7 @@ if choose == "부산 월드 엑스포 홍보" :
     #월드 엑스포에 대한 정보를 더 자세히 보여주는 링크 제공
     st.subheader("더 알아보기")
     st.write("공식 웹사이트에서 더 많은 정보를 확인하세요:")
-    st.write("[부산 월드 엑스포 2030 공식 웹사이트](https://www.expo2030busan.kr/index.do)")
+    st.write("[www.expo2030busan.kr](https://www.expo2030busan.kr/index.do)")
 
 if choose == "부산의 지도" :
     st.title('부산의 지도') 
