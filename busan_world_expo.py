@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 import io
+import gmaps
 
 # st.markdown(
 #          f"""
@@ -181,6 +182,8 @@ if choose == side_bar_sub_2 :
     
     ## 데이터를 사용하여 지도 생성
     st.map(data)
+
+    gmaps.configure(api_key='AIzaSyDywym4jbNNEYLa59PcBUSHyv-nigCMdQA')
 
 if choose == side_bar_sub_3 :
     st.title(side_bar_sub_3)
