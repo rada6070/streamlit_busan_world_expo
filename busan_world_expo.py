@@ -186,6 +186,7 @@ if choose == side_bar_sub_2 :
     def bu_san():
 
             # Plot coordinates
+            gmaps.configure(api_key='AIzaSyDywym4jbNNEYLa59PcBUSHyv-nigCMdQA')
             coordinates = (40.75, -74)
             _map = gmaps.figure(center=coordinates, zoom_level=12)
 
