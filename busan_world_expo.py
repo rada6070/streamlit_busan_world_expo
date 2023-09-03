@@ -115,7 +115,7 @@ elif sl_sc == sl_box[2] :
         side_bar_sub_2 = "釜山の地図"
         side_bar_sub_3 = "釜山観光地選好度グラフ"
 
-        page_1_title = 釜山2030ワールドエキスポ"
+        page_1_title = "釜山2030ワールドエキスポ"
         page_1_explain_1 = "釜山ワールドエキスポ2030は世界各国の文化と技術を展示する国際行事です。"
 
         page_1_subheader_1 = "主な行事情報"
