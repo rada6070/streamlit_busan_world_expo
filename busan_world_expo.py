@@ -25,7 +25,7 @@ import io
 
 #언어 셀렉트 박스 변수
 
-sl_box = [ 'English', '한국어', '日本語' ]
+sl_box = [ 'English', '한국어', '日本語', '中文(简体)', '中文(繁體)' ]
 
 sl_sc = st.sidebar.selectbox( 'lang select' , sl_box )
 
@@ -135,6 +135,60 @@ elif sl_sc == sl_box[2] :
         page_3_columns_2 = "チャガルチ市場"
         page_3_columns_3 = "国際市場"
         page_3_columns_4 = "釜田市長"
+
+elif sl_sc == sl_box[3] :
+        side_bar_main = "釜山2030年世界博览会"
+        side_bar_sub_1 = "釜山世界博览会宣传"
+        side_bar_sub_2 = "釜山地图"
+        side_bar_sub_3 = "釜山观光地偏好度图表"
+
+        page_1_title = "釜山2030年世界博览会"
+        page_1_explain_1 = "釜山世界博览会2030是展示世界各国文化和技术的国际活动。"
+
+        page_1_subheader_1 = "主要活动信息"
+        page_1_explain_when = "日期:2030年5月1日-10月31日"
+        page_1_explain_where = "地点:釜山，韩国"
+        page_1_explain_thema = "主题:'开启新世界的革新和可持续性'"
+
+        page_1_image_gall = "图片画廊"
+
+        page_1_subheader_2 = "更多了解"
+        page_1_explain_2 = "请在官方网站上查看更多信息 :"
+
+        page_2_title = "釜山地图"
+
+        page_3_title = "釜山观光地偏好度图表"
+        page_3_columns_1 = "甘川文化村"
+        page_3_columns_2 = "札嘎其市场"
+        page_3_columns_3 = "国际市场"
+        page_3_columns_4 = "副前市长"
+
+elif sl_sc == sl_box[4] :
+        side_bar_main = "釜山2030年世界博覽會"
+        side_bar_sub_1 = "釜山世界博覽會宣傳"
+        side_bar_sub_2 = "釜山地圖"
+        side_bar_sub_3 = "釜山觀光地偏好度圖表"
+
+        page_1_title = "釜山2030年世界博覽會"
+        page_1_explain_1 = "釜山世界博覽會2030是展示世界各國文化和技術的國際活動。"
+
+        page_1_subheader_1 = "主要活動信息"
+        page_1_explain_when = "日期:2030年5月1日-10月31日"
+        page_1_explain_where = "地點:釜山，韓國"
+        page_1_explain_thema = "主題:'開啓新世界的革新和可持續性'"
+
+        page_1_image_gall = "圖片畫廊"
+
+        page_1_subheader_2 = "更多瞭解"
+        page_1_explain_2 = "請在官方網站上查看更多信息 :"
+
+        page_2_title = "釜山地圖"
+
+        page_3_title = "釜山觀光地偏好度圖表"
+        page_3_columns_1 = "甘川文化村"
+        page_3_columns_2 = "札嘎其市場"
+        page_3_columns_3 = "國際市場"
+        page_3_columns_4 = "副前市長"
 
 st.markdown("""
         <style>
