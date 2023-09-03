@@ -183,19 +183,6 @@ if choose == side_bar_sub_2 :
     ## 데이터를 사용하여 지도 생성
     st.map(data)
 
-    def bu_san():
-
-            # Plot coordinates
-            gmaps.configure(api_key='AIzaSyDywym4jbNNEYLa59PcBUSHyv-nigCMdQA')
-            coordinates = (40.75, -74)
-            _map = gmaps.figure(center=coordinates, zoom_level=12)
-
-            # Render map in Streamlit
-            snippet = embed.embed_snippet(views=_map)
-            html = embed.html_template.format(title="", snippet=snippet)
-            return components.html(html, height=500,width=500)
-    bu_san()
-
 if choose == side_bar_sub_3 :
     st.title(side_bar_sub_3)
     chart_data = pd.DataFrame(
