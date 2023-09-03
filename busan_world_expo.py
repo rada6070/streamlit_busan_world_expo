@@ -25,7 +25,7 @@ import gmaps
 
 #언어 셀렉트 박스 변수
 
-sl_box = [ 'English', '한국어' ]
+sl_box = [ 'English', '한국어', '日本語' ]
 
 sl_sc = st.sidebar.selectbox( 'lang select' , sl_box )
 
@@ -108,6 +108,33 @@ elif sl_sc == sl_box[1] :
         page_3_columns_2 = "자갈치 시장"
         page_3_columns_3 = "국제 시장"
         page_3_columns_4 = "부전 시장"
+
+elif sl_sc == sl_box[2] :
+        side_bar_main = "釜山2030ワールドエキスポ"
+        side_bar_sub_1 = "釜山ワールドエキスポ広報"
+        side_bar_sub_2 = "釜山の地図"
+        side_bar_sub_3 = "釜山観光地選好度グラフ"
+
+        page_1_title = 釜山2030ワールドエキスポ"
+        page_1_explain_1 = "釜山ワールドエキスポ2030は世界各国の文化と技術を展示する国際行事です。"
+
+        page_1_subheader_1 = "主な行事情報"
+        page_1_explain_when = "日時:2030年5月1日-10月31日"
+        page_1_explain_where = "場所:釜山、大韓民国"
+        page_1_explain_thema = "テーマ:「新しい世界を切り開く革新と持続可能性」"
+
+        page_1_image_gall = "イメージギャラリー"
+
+        page_1_subheader_2 = "もっと調べる"
+        page_1_explain_2 = "公式ウェブサイトでより多くの情報をご確認ください:"
+
+        page_2_title = "釜山の地図"
+
+        page_3_title = "釜山観光地選好度グラフ"
+        page_3_columns_1 = "甘川文化村"
+        page_3_columns_2 = "チャガルチ市場"
+        page_3_columns_3 = "国際市場"
+        page_3_columns_4 = "釜田市長"
 
 st.markdown("""
         <style>
