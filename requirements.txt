@@ -5,3 +5,5 @@ plotly==5.9.0
 streamlit==1.25.0
 streamlit_option_menu==0.3.6
 folium==0.14.0
+jinja2
+branca
