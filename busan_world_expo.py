@@ -25,7 +25,7 @@ import io
 
 #언어 셀렉트 박스 변수
 
-sl_box = [ 'English', '한국어', '日本語', '中文(简体)', '中文(繁體)' ]
+sl_box = [ 'English', '한국어', '日本語', '中文 简体 ', '中文 繁體 ' ]
 
 sl_sc = st.sidebar.selectbox( 'lang select' , sl_box )
 
