@@ -6,7 +6,6 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 import io
-#asd
 import folium
 from streamlit_folium import st_folium
 
