@@ -7,3 +7,4 @@ streamlit_option_menu==0.3.6
 folium==0.14.0
 jinja2
 branca
+requests
