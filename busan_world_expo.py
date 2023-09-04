@@ -240,14 +240,8 @@ if choose == side_bar_sub_1 :
 
 if choose == side_bar_sub_2 :
     st.title(side_bar_sub_2) 
-    ## 위도와 경도 값을 가진 샘플 DataFrame 생성
-    data = pd.DataFrame({
-        'latitude': [35.1795543],
-        'longitude': [129.0756416]
-    })
-    
-    ## 데이터를 사용하여 지도 생성
-    st.map(data)
+
+    m = folium.Map(location=[35.1795543, 129.0756416], zoom_start=16)
 
 if choose == side_bar_sub_3 :
     st.title(side_bar_sub_3)
