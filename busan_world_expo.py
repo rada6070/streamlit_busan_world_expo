@@ -5,24 +5,10 @@ from  PIL import Image
 import numpy as np
 import pandas as pd
 import plotly.express as px
+# .
 import io
 import folium
 from streamlit_folium import st_folium
-
-# st.markdown(
-#          f"""
-#          <style>
-#          .stApp {{
-#              background-image: url("https://live.lge.co.kr/wp-content/uploads/2015/07/%EB%B0%94%EB%8B%A4.jpg");
-#              background-attachment: fixed;
-#              background-size: cover
-#          }}
-#          </style>
-#          """,
-#          unsafe_allow_html=True
-#      )
-
-# Remove whitespace from the top of the page and sidebar
 
 #언어 셀렉트 박스 변수
 
