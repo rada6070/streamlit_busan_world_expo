@@ -1,1 +1,1 @@
-matplotlib
+matplotlib>=1.5
