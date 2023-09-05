@@ -6,6 +6,8 @@ streamlit>=1.13.0
 streamlit_option_menu==0.3.6
 matplotlib
 folium>=0.13
+streamlit_folium
+streamlit-folium
 jinja2
 branca
 requests
