@@ -194,7 +194,7 @@ st.markdown("""
 
 
 with st.sidebar:
-    choose = option_menu(side_bar_mai, [side_bar_sub_1, side_bar_sub_2, side_bar_sub_3],
+    choose = option_menu(side_bar_main, [side_bar_sub_1, side_bar_sub_2, side_bar_sub_3],
                          icons=['house', 'map', 'bar-chart'],
                          menu_icon="bi bi-menu-up", default_index=0,
                          styles={
