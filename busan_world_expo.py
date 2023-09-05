@@ -7,7 +7,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objs as go
 import io
-import matplotlib
+import matplotlib.pyplot as plt
 
 #언어 셀렉트 박스 변수
 
