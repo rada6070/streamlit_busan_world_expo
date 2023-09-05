@@ -339,13 +339,7 @@ if choose == side_bar_sub_1 :
 
 if choose == side_bar_sub_2 :
     st.title(side_bar_sub_2) 
-    # 제목 생성 
-    df = pd.DataFrame({
-        'latitude': [35.1795543],
-        'longitude': [129.0756416]
-    })
-    
-    st.map(df)
+   
     # 지도 생성 
 
     m = folium.Map(location=[35.1795543, 129.0756416], zoom_start=16)
@@ -356,7 +350,7 @@ if choose == side_bar_sub_3 :
         st.title(side_bar_sub_3)
 
         # 데이터1 막대 그래프 - 관광지 정보
-        plt.figure(figsize=(10, 8))  # 그래프 크기 조정
+        plt.figure(figsize=(15, 8))  # 그래프 크기 조정
         
         # 데이터1을 세로 막대 그래프로 표시
         locations = list(tourist_data.keys())
@@ -386,15 +380,16 @@ if choose == side_bar_sub_3 :
         plt.xlabel('Count')
         plt.title('Positive, Negative, and Neutral Counts by Tourist Attraction')
         plt.yticks(y, locations)
-        plt.legend(loc = 'upper center')
+        plt.legend(loc = 'lower right')
         
         plt.tight_layout()
         plt.show()
 
 
+
 if choose == side_bar_sub_4 :
         st.title(side_bar_sub_4)
-    
+
         # Restaurant data
         plt.figure(figsize=(15, 8))  # Adjust the size of the graph
         
