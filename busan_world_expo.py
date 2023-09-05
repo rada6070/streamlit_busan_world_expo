@@ -7,6 +7,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objs as go
 import io
+import matplotlib.pyplot as plt
 
 #언어 셀렉트 박스 변수
 
@@ -257,6 +258,17 @@ if choose == side_bar_sub_2 :
 
 if choose == side_bar_sub_3 :
     st.title(side_bar_sub_3)
+
+    df_1 = {
+        '긍정 갯수': 977,
+        '부정 갯수': 98,
+        '중립 갯수': 925,
+        '긍정 비율': 0.4885,
+        '부정 비율': 0.049,
+        '중립 비율': 0.4625
+        }
+
+    st
 
 if choose == side_bar_sub_4 :
     st.title(side_bar_sub_4)
