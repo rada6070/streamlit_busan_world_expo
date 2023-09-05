@@ -41,7 +41,7 @@ if sl_sc == sl_box[0] :
         global page_3_columns_3
         global page_3_columns_4
 
-        side_bar_main = "Busan 2030 World Expo"
+        side_bar_main = "Busan attraction recommendation program"
         side_bar_sub_1 = "Promotion of Busan World Expo"
         side_bar_sub_2 = "Map of Busan"
         side_bar_sub_3 = "Busan Tourist Site Preference Graph"
@@ -68,7 +68,7 @@ if sl_sc == sl_box[0] :
         page_3_columns_4 = "Bujeon Market"
 
 elif sl_sc == sl_box[1] :
-        side_bar_main = "부산 2030 월드 엑스포"
+        side_bar_main = "부산 명소 추천 프로그램"
         side_bar_sub_1 = "부산 월드 엑스포 홍보"
         side_bar_sub_2 = "부산의 지도"
         side_bar_sub_3 = "부산 관광지 선호도 그래프"
@@ -95,7 +95,7 @@ elif sl_sc == sl_box[1] :
         page_3_columns_4 = "부전 시장"
 
 elif sl_sc == sl_box[2] :
-        side_bar_main = "釜山2030ワールドエキスポ"
+        side_bar_main = "釜山の名所おすすめプログラム"
         side_bar_sub_1 = "釜山ワールドエキスポ広報"
         side_bar_sub_2 = "釜山の地図"
         side_bar_sub_3 = "釜山観光地選好度グラフ"
@@ -122,7 +122,7 @@ elif sl_sc == sl_box[2] :
         page_3_columns_4 = "釜田市長"
 
 elif sl_sc == sl_box[3] :
-        side_bar_main = "釜山2030年世界博览会"
+        side_bar_main = "釜山名胜推荐节目"
         side_bar_sub_1 = "釜山世界博览会宣传"
         side_bar_sub_2 = "釜山地图"
         side_bar_sub_3 = "釜山观光地偏好度图表"
@@ -149,7 +149,7 @@ elif sl_sc == sl_box[3] :
         page_3_columns_4 = "副前市长"
 
 elif sl_sc == sl_box[4] :
-        side_bar_main = "釜山2030年世界博覽會"
+        side_bar_main = "釜山名勝推薦節目"
         side_bar_sub_1 = "釜山世界博覽會宣傳"
         side_bar_sub_2 = "釜山地圖"
         side_bar_sub_3 = "釜山觀光地偏好度圖表"
