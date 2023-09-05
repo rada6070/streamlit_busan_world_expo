@@ -405,9 +405,6 @@ if choose == side_bar_sub_3 :
                     shadow=True, textprops={'fontsize': 10})  # 그림자와 퍼센티지 크기 설정
             plt.axis('equal')  # 원을 동그랗게 유지
         
-            # 폰트 설정
-            plt.rc('font', family='NanumBarunGothic')
-        
             # 제목 설정
             plt.title(f'{location} 관광지의 \n긍정, 부정, a neutrality percentage', fontsize=14)
         
@@ -467,9 +464,6 @@ if choose == side_bar_sub_4 :
             plt.pie(sizes, labels=labels, colors=colors, autopct=autopct_format, startangle=90, explode=explode,
                     shadow=True, textprops={'fontsize': 10})  # 그림자와 퍼센티지 크기 설정
             plt.axis('equal')  # 원을 동그랗게 유지
-        
-            # 폰트 설정
-            plt.rc('font', family='NanumBarunGothic')
         
             # 제목 설정
             plt.title(f'{restaurant} 맛집의 \n긍정, 부정, a neutrality percentage', fontsize=14)
