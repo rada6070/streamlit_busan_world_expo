@@ -347,7 +347,7 @@ if choose == side_bar_sub_2 :
     # 지도 생성 
 
 if choose == side_bar_sub_3 :
-    st.title(side_bar_sub_3)
+        st.title(side_bar_sub_3)
 
         # 데이터1 막대 그래프 - 관광지 정보
         plt.figure(figsize=(10, 8))  # 그래프 크기 조정
@@ -410,7 +410,7 @@ if choose == side_bar_sub_3 :
 
 
 if choose == side_bar_sub_4 :
-    st.title(side_bar_sub_4)
+        st.title(side_bar_sub_4)
 
         # 데이터2 막대 그래프 - 맛집 정보
         plt.figure(figsize=(10, 8))  # 그래프 크기 조정
