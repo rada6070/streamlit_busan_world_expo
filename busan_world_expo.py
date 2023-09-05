@@ -350,79 +350,11 @@ if choose == side_bar_sub_2 :
 if choose == side_bar_sub_3 :
         st.title(side_bar_sub_3)
 
-        # 데이터1 막대 그래프 - 관광지 정보
-        plt.figure(figsize=(15, 8))  # 그래프 크기 조정
-        
-        # 데이터1을 세로 막대 그래프로 표시
-        locations = list(tourist_data.keys())
-        positive_counts = [location_data['Positive_count'] for location_data in tourist_data.values()]
-        negative_counts = [location_data['Negative_count'] for location_data in tourist_data.values()]
-        neutral_counts = [location_data['Neutral_count'] for location_data in tourist_data.values()]
-        
-        y = np.arange(len(locations))
-        bar_height = 0.2
-        
-        # 막대 그래프 그리기
-        plt.barh(y - bar_height, positive_counts, height=bar_height, label='Positive Count', color='skyblue', alpha=0.7)
-        plt.barh(y, negative_counts, height=bar_height, label='Negative Count', color='lightcoral', alpha=0.7)
-        plt.barh(y + bar_height, neutral_counts, height=bar_height, label='Neutral Count', color='gray', alpha=0.7)
-        
-        # 각 막대 그래프 위에 갯수 표시하기
-        for i, v in enumerate(positive_counts):
-            plt.text(v + 10, i - bar_height, str(v), color='skyblue', fontsize=12, va='center', fontweight='bold')
-        
-        for i, v in enumerate(negative_counts):
-            plt.text(v + 10, i, str(v), color='lightcoral', fontsize=12, va='center', fontweight='bold')
-        
-        for i, v in enumerate(neutral_counts):
-            plt.text(v + 10, i + bar_height, str(v), color='gray', fontsize=12, va='center', fontweight='bold')
-        
-        plt.ylabel('Tourist Attractions')
-        plt.xlabel('Count')
-        plt.title('Positive, Negative, and Neutral Counts by Tourist Attraction')
-        plt.yticks(y, locations)
-        plt.legend(loc='lower right')
-        
-        plt.tight_layout()
-        plt.show()
+        st.image("https://ifh.cc/g/Cj8779.png", use_column_width=True)
 
 
 
 if choose == side_bar_sub_4 :
         st.title(side_bar_sub_4)
 
-        # Restaurant data
-        plt.figure(figsize=(15, 8))  # Adjust the size of the graph
-        
-        # Display data2 as a vertical bar graph
-        restaurants = list(restaurant_data.keys())  # List of restaurants
-        positive_counts = [restaurant_data['Positive_count'] for restaurant_data in restaurant_data.values()]  # Positive counts for each restaurant
-        negative_counts = [restaurant_data['Negative_count'] for restaurant_data in restaurant_data.values()]  # Negative counts for each restaurant
-        neutral_counts = [restaurant_data['Neutral_count'] for restaurant_data in restaurant_data.values()]  # Neutral counts for each restaurant
-        
-        y = np.arange(len(restaurants))
-        bar_height = 0.2
-        
-        # Create bar graphs
-        plt.barh(y - bar_height, positive_counts, height=bar_height, label='Positive Count', color='skyblue', alpha=0.7)
-        plt.barh(y, negative_counts, height=bar_height, label='Negative Count', color='lightcoral', alpha=0.7)
-        plt.barh(y + bar_height, neutral_counts, height=bar_height, label='Neutral Count', color='gray', alpha=0.7)
-        
-        # Display the counts on top of each bar graph
-        for i, v in enumerate(positive_counts):
-            plt.text(v + 10, i - bar_height, str(v), color='skyblue', fontsize=12, va='center', fontweight='bold')
-        
-        for i, v in enumerate(negative_counts):
-            plt.text(v + 10, i, str(v), color='lightcoral', fontsize=12, va='center', fontweight='bold')
-        
-        for i, v in enumerate(neutral_counts):
-            plt.text(v + 10, i + bar_height, str(v), color='gray', fontsize=12, va='center', fontweight='bold')
-        
-        plt.ylabel('Restaurant')
-        plt.xlabel('Count')
-        plt.title('Positive, Negative, and Neutral Counts by Restaurant')
-        plt.yticks(y, restaurants)
-        plt.legend(loc='upper right')  # Change the legend position
-        
-        plt.tight_layout()
-        plt.show()
+        st.image("https://ifh.cc/g/ZlhpTa.png", use_column_width=True)
