@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 import io
+import folium
 
 #언어 셀렉트 박스 변수
 
