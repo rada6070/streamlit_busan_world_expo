@@ -19,6 +19,7 @@ if sl_sc == sl_box[0] :
         global side_bar_sub_1
         global side_bar_sub_2
         global side_bar_sub_3
+        global side_bar_sub_4
 
         global page_1_title
         global page_1_explain_1
@@ -45,6 +46,7 @@ if sl_sc == sl_box[0] :
         side_bar_sub_1 = "Promotion of Busan World Expo"
         side_bar_sub_2 = "Map of Busan"
         side_bar_sub_3 = "Busan Tourist Site Preference Graph"
+        side_bar_sub_4 = "Busan Restaurant Preference Graph"
 
         page_1_title = "Promotion of Busan World Expo"
         page_1_explain_1 = "Busan World Expo 2030 is an international event that displays cultures and technologies from around the world."
@@ -72,6 +74,7 @@ elif sl_sc == sl_box[1] :
         side_bar_sub_1 = "부산 월드 엑스포 홍보"
         side_bar_sub_2 = "부산의 지도"
         side_bar_sub_3 = "부산 관광지 선호도 그래프"
+        side_bar_sub_4 = "부산 맛집 선호도 그래프"
 
         page_1_title = "부산 2030 월드 엑스포"
         page_1_explain_1 = "부산 월드 엑스포 2030은 세계 각국의 문화와 기술을 전시하는 국제 행사입니다."
@@ -99,6 +102,7 @@ elif sl_sc == sl_box[2] :
         side_bar_sub_1 = "釜山ワールドエキスポ広報"
         side_bar_sub_2 = "釜山の地図"
         side_bar_sub_3 = "釜山観光地選好度グラフ"
+        side_bar_sub_4 = "釜山グルメ選好度グラフ"
 
         page_1_title = "釜山2030ワールドエキスポ"
         page_1_explain_1 = "釜山ワールドエキスポ2030は世界各国の文化と技術を展示する国際行事です。"
@@ -126,6 +130,7 @@ elif sl_sc == sl_box[3] :
         side_bar_sub_1 = "釜山世界博览会宣传"
         side_bar_sub_2 = "釜山地图"
         side_bar_sub_3 = "釜山观光地偏好度图表"
+        side_bar_sub_4 = "釜山美食店喜好度图表"
 
         page_1_title = "釜山2030年世界博览会"
         page_1_explain_1 = "釜山世界博览会2030是展示世界各国文化和技术的国际活动。"
@@ -153,6 +158,7 @@ elif sl_sc == sl_box[4] :
         side_bar_sub_1 = "釜山世界博覽會宣傳"
         side_bar_sub_2 = "釜山地圖"
         side_bar_sub_3 = "釜山觀光地偏好度圖表"
+        side_bar_sub_4 = "釜山美食店喜好度圖表"
 
         page_1_title = "釜山2030年世界博覽會"
         page_1_explain_1 = "釜山世界博覽會2030是展示世界各國文化和技術的國際活動。"
@@ -194,8 +200,8 @@ st.markdown("""
 
 
 with st.sidebar:
-    choose = option_menu(side_bar_main, [side_bar_sub_1, side_bar_sub_2, side_bar_sub_3],
-                         icons=['house', 'map', 'bar-chart'],
+    choose = option_menu(side_bar_main, [side_bar_sub_1, side_bar_sub_2, side_bar_sub_3, side_bar_sub_4],
+                         icons=['house', 'map', 'bar-chart', 'bar-chart'],
                          menu_icon="bi bi-menu-up", default_index=0,
                          styles={
         "menu-title": {"color": "black"},
