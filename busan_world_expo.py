@@ -241,7 +241,8 @@ if choose == side_bar_sub_1 :
 if choose == side_bar_sub_2 :
     st.title(side_bar_sub_2) 
     # 제목 생성 
-    st.map()
+    df = pd.DataFrame( [ 35.1795543, 129.0756416 ] , columns = [ 'lat', 'lon' ] )
+    st.map(df)
     # 지도 생성 
 
 if choose == side_bar_sub_3 :
