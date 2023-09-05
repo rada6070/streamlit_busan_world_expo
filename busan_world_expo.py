@@ -240,7 +240,7 @@ if choose == side_bar_sub_1 :
 
 if choose == side_bar_sub_2 :
     st.title(side_bar_sub_2) 
-    m = folium.Map(location=[35.1795543, 129.0756416], zoom_start=16)
+    st.map()
 
 if choose == side_bar_sub_3 :
     st.title(side_bar_sub_3)
