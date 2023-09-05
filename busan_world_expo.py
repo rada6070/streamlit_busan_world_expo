@@ -9,6 +9,96 @@ import plotly.graph_objs as go
 import io
 import matplotlib.pyplot as plt
 
+#감정분석 데이터
+
+# 데이터 딕셔너리 - 관광지 정보 (data1)
+tourist_data = {
+    '해운대': {
+        '긍정 갯수': 910,
+        '부정 갯수': 129,
+        '중립 갯수': 961,
+        '긍정 비율': 0.455,
+        '부정 비율': 0.0645,
+        '중립 비율': 0.4805
+    },
+    '해동용궁사': {
+        '긍정 갯수': 780,
+        '부정 갯수': 133,
+        '중립 갯수': 1087,
+        '긍정 비율': 0.39,
+        '부정 비율': 0.0665,
+        '중립 비율': 0.5435
+    },
+    '오륙도': {
+        '긍정 갯수': 798,
+        '부정 갯수': 389,
+        '중립 갯수': 813,
+        '긍정 비율': 0.399,
+        '부정 비율': 0.1945,
+        '중립 비율': 0.4065
+    },
+    '남포동': {
+        '긍정 갯수': 1075,
+        '부정 갯수': 111,
+        '중립 갯수': 814,
+        '긍정 비율': 0.5375,
+        '부정 비율': 0.0555,
+        '중립 비율': 0.407
+    },
+    '동백섬': {
+        '긍정 갯수': 735,
+        '부정 갯수': 140,
+        '중립 갯수': 1125,
+        '긍정 비율': 0.3675,
+        '부정 비율': 0.07,
+        '중립 비율': 0.5625
+    },
+}
+
+# 데이터 딕셔너리 - 맛집 정보 (data2)
+restaurant_data = {
+    '진양호횟집': {
+        '긍정 갯수': 977,
+        '부정 갯수': 98,
+        '중립 갯수': 925,
+        '긍정 비율': 0.4885,
+        '부정 비율': 0.049,
+        '중립 비율': 0.4625
+    },
+    '이재모피자': {
+        '긍정 갯수': 1010,
+        '부정 갯수': 96,
+        '중립 갯수': 894,
+        '긍정 비율': 0.505,
+        '부정 비율': 0.048,
+        '중립 비율': 0.447
+    },
+    '솔내음한정식': {
+        '긍정 갯수': 1224,
+        '부정 갯수': 79,
+        '중립 갯수': 697,
+        '긍정 비율': 0.612,
+        '부정 비율': 0.0395,
+        '중립 비율': 0.3485
+    },
+    '가야밀면': {
+        '긍정 갯수': 1382,
+        '부정 갯수': 80,
+        '중립 갯수': 538,
+        '긍정 비율': 0.691,
+        '부정 비율': 0.04,
+        '중립 비율': 0.269
+    },
+    '선창횟집': {
+        '긍정 갯수': 1240,
+        '부정 갯수': 101,
+        '중립 갯수': 659,
+        '긍정 비율': 0.62,
+        '부정 비율': 0.0505,
+        '중립 비율': 0.3295
+    },
+}
+
 #언어 셀렉트 박스 변수
 
 sl_box = [ 'English', '한국어', '日本語', '中文 简体 ', '中文 繁體 ' ]
@@ -259,17 +349,124 @@ if choose == side_bar_sub_2 :
 if choose == side_bar_sub_3 :
     st.title(side_bar_sub_3)
 
-    df_1 = {
-        '긍정 갯수': 977,
-        '부정 갯수': 98,
-        '중립 갯수': 925,
-        '긍정 비율': 0.4885,
-        '부정 비율': 0.049,
-        '중립 비율': 0.4625
-        }
+        # 데이터1 막대 그래프 - 관광지 정보
+        plt.figure(figsize=(10, 8))  # 그래프 크기 조정
+        
+        # 데이터1을 세로 막대 그래프로 표시
+        locations = list(tourist_data.keys())
+        positive_counts = [location_data['긍정 갯수'] for location_data in tourist_data.values()]
+        negative_counts = [location_data['부정 갯수'] for location_data in tourist_data.values()]
+        neutral_counts = [location_data['중립 갯수'] for location_data in tourist_data.values()]
+        
+        y = np.arange(len(locations))
+        bar_height = 0.2
+        
+        # 막대 그래프 그리기
+        plt.barh(y - bar_height, positive_counts, height=bar_height, label='긍정 갯수', color='skyblue', alpha=0.7)
+        plt.barh(y, negative_counts, height=bar_height, label='부정 갯수', color='lightcoral', alpha=0.7)
+        plt.barh(y + bar_height, neutral_counts, height=bar_height, label='중립 갯수', color='gray', alpha=0.7)
+        
+        # 각 막대 그래프 위에 갯수 표시하기
+        for i, v in enumerate(positive_counts):
+            plt.text(v + 10, i - bar_height, str(v), color='skyblue', fontsize=12, va='center', fontweight='bold')
+        
+        for i, v in enumerate(negative_counts):
+            plt.text(v + 10, i, str(v), color='lightcoral', fontsize=12, va='center', fontweight='bold')
+        
+        for i, v in enumerate(neutral_counts):
+            plt.text(v + 10, i + bar_height, str(v), color='gray', fontsize=12, va='center', fontweight='bold')
+        
+        plt.ylabel('관광지')
+        plt.xlabel('갯수')
+        plt.title('관광지별 긍정, 부정, 중립 갯수')
+        plt.yticks(y, locations)
+        plt.legend()
+        
+        plt.tight_layout()
+        plt.show()
 
-    st
+        # 각 관광지 별로 원 그래프 그리기
+        for location, data in tourist_data.items():
+            plt.figure(figsize=(4, 4), dpi=80)  # 그래프 크기와 dpi 조정
+            labels = ['긍정', '부정', '중립']
+            sizes = [data['긍정 비율'], data['부정 비율'], data['중립 비율']]
+            colors = ['skyblue', 'lightcoral', 'lightgray']  # 색상 설정
+            explode = (0.03, 0.03, 0.03)  # 조각 분리 설정
+            autopct_format = '%.1f%%'  # 퍼센티지 크기 늘리기
+        
+            # 원 그래프 그리기
+            plt.pie(sizes, labels=labels, colors=colors, autopct=autopct_format, startangle=90, explode=explode,
+                    shadow=True, textprops={'fontsize': 10})  # 그림자와 퍼센티지 크기 설정
+            plt.axis('equal')  # 원을 동그랗게 유지
+        
+            # 폰트 설정
+            plt.rc('font', family='NanumBarunGothic')
+        
+            # 제목 설정
+            plt.title(f'{location} 관광지의 \n긍정, 부정, 중립 비율', fontsize=14)
+        
+            # 그래프 표시
+            plt.show()
+
 
 if choose == side_bar_sub_4 :
     st.title(side_bar_sub_4)
 
+        # 데이터2 막대 그래프 - 맛집 정보
+        plt.figure(figsize=(10, 8))  # 그래프 크기 조정
+        
+        # 데이터2를 세로 막대 그래프로 표시
+        restaurants = list(restaurant_data.keys())
+        positive_counts = [restaurant_data['긍정 갯수'] for restaurant_data in restaurant_data.values()]
+        negative_counts = [restaurant_data['부정 갯수'] for restaurant_data in restaurant_data.values()]
+        neutral_counts = [restaurant_data['중립 갯수'] for restaurant_data in restaurant_data.values()]
+        
+        y = np.arange(len(restaurants))
+        bar_height = 0.2
+        
+        # 막대 그래프 그리기
+        plt.barh(y - bar_height, positive_counts, height=bar_height, label='긍정 갯수', color='skyblue', alpha=0.7)
+        plt.barh(y, negative_counts, height=bar_height, label='부정 갯수', color='lightcoral', alpha=0.7)
+        plt.barh(y + bar_height, neutral_counts, height=bar_height, label='중립 갯수', color='gray', alpha=0.7)
+        
+        # 각 막대 그래프 위에 갯수 표시하기
+        for i, v in enumerate(positive_counts):
+            plt.text(v + 10, i - bar_height, str(v), color='skyblue', fontsize=12, va='center', fontweight='bold')
+        
+        for i, v in enumerate(negative_counts):
+            plt.text(v + 10, i, str(v), color='lightcoral', fontsize=12, va='center', fontweight='bold')
+        
+        for i, v in enumerate(neutral_counts):
+            plt.text(v + 10, i + bar_height, str(v), color='gray', fontsize=12, va='center', fontweight='bold')
+        
+        plt.ylabel('맛집')
+        plt.xlabel('갯수')
+        plt.title('맛집별 긍정, 부정, 중립 갯수')
+        plt.yticks(y, restaurants)
+        plt.legend()
+        
+        plt.tight_layout()
+        plt.show()
+
+        # 각 관광지 별로 원 그래프 그리기
+        for restaurant, data in restaurant_data.items():
+            plt.figure(figsize=(4, 4), dpi=80)  # 그래프 크기와 dpi 조정
+            labels = ['긍정', '부정', '중립']
+            sizes = [data['긍정 비율'], data['부정 비율'], data['중립 비율']]
+            colors = ['skyblue', 'lightcoral', 'lightgray']  # 색상 설정
+            explode = (0.03, 0.03, 0.03)  # 조각 분리 설정
+            autopct_format = '%.1f%%'  # 퍼센티지 크기 늘리기
+        
+            # 원 그래프 그리기
+            plt.pie(sizes, labels=labels, colors=colors, autopct=autopct_format, startangle=90, explode=explode,
+                    shadow=True, textprops={'fontsize': 10})  # 그림자와 퍼센티지 크기 설정
+            plt.axis('equal')  # 원을 동그랗게 유지
+        
+            # 폰트 설정
+            plt.rc('font', family='NanumBarunGothic')
+        
+            # 제목 설정
+            plt.title(f'{restaurant} 맛집의 \n긍정, 부정, 중립 비율', fontsize=14)
+        
+            # 그래프 표시
+            plt.show()
