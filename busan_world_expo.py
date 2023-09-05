@@ -380,7 +380,7 @@ if choose == side_bar_sub_3 :
         plt.xlabel('Count')
         plt.title('Positive, Negative, and Neutral Counts by Tourist Attraction')
         plt.yticks(y, locations)
-        plt.legend(loc = 'lower right')
+        plt.legend(loc='lower right')
         
         plt.tight_layout()
         plt.show()
