@@ -8,6 +8,7 @@ import plotly.express as px
 import plotly.graph_objs as go
 import io
 import matplotlib.pyplot as plt
+import matplotlib
 import folium
 from streamlit_folium import st_folium
 
