@@ -242,8 +242,8 @@ if choose == side_bar_sub_2 :
     st.title(side_bar_sub_2) 
     # 제목 생성 
     df = pd.DataFrame({
-        'latitude': [129.0756416],
-        'longitude': [35.1795543]
+        'latitude': [35.1795543],
+        'longitude': [129.0756416]
     })
     
     st.map(df)
