@@ -258,3 +258,6 @@ if choose == side_bar_sub_2 :
 if choose == side_bar_sub_3 :
     st.title(side_bar_sub_3)
 
+if choose == side_bar_sub_4 :
+    st.title(side_bar_sub_4)
+
