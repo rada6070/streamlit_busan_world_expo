@@ -1,0 +1,25 @@
+/*
+ *   무슨 CSS인지 모르겠음
+ */
+.css-18e3th9 {
+    padding-top: 0rem;
+    padding-bottom: 10rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+.css-1d391kg {
+    padding-top: 3.5rem;
+    padding-right: 1rem;
+    padding-bottom: 3.5rem;
+    padding-left: 1rem;
+}
+
+/*
+ * Sidebar overflow scroll
+ */
+section[data-testid='stSidebar'] * {
+    overflow-x: hidden;
+}
+section[data-testid='stSidebar'] div[data-testid='stImage'] {
+    margin: 3rem auto;
+}
