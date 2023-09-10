@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{include = "expoanalytics_i18n"}]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">=3.9,<3.9.7 || >3.9.7,<4.0"
 streamlit = "^1.26.0"
 pandas = "^2.1.0"
 numpy = "^1.25.2"
