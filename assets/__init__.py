@@ -1,6 +1,11 @@
 import os
 import types
 
+from PIL import Image
+
+
+assets = {}
+
 
 def import_assets(exist: str, st: types.ModuleType) -> None:
     if not os.path.exists(exist):
@@ -21,3 +26,11 @@ def import_assets(exist: str, st: types.ModuleType) -> None:
         html,
         unsafe_allow_html=True,
     )
+
+
+__assets = os.path.dirname(__file__)
+for file in os.listdir(os.path.dirname(__file__)):
+    path = os.path.join(__assets, file)
+    if file[:-3] in ["jpg", "png"]:
+        with open(path, "rb") as f:
+            assets[file[:-4]] = Image.open(path)

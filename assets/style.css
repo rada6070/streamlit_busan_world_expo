@@ -1,4 +1,12 @@
 /*
+ * Pretendard 폰트 적용
+ */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+* {
+    font-family: 'Pretendard', sans-serif;
+}
+
+/*
  *   무슨 CSS인지 모르겠음
  */
 .css-18e3th9 {

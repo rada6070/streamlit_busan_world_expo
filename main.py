@@ -12,13 +12,16 @@ import matplotlib.pyplot as plt
 
 import i18n
 import style
+import assets
 
 from PIL import Image
 from streamlit_folium import st_folium
 from streamlit_option_menu import option_menu
 from streamlit_js_eval import get_browser_language
 
-from assets import import_assets
+
+# 넓은 화면 모드
+st.set_page_config(layout="wide")
 
 
 # 브라우저 기본 언어 불러오기
@@ -27,8 +30,9 @@ try:
 except AttributeError:
     preferred_language = "ko"
 
+
 # 스타일 시트 불러오기
-import_assets("assets/style.css", st)
+assets.import_assets("assets/style.css", st)
 
 
 # 언어 선택
@@ -41,6 +45,7 @@ if language_select == "브라우저 기본 설정":
     language = i18n.LoadLangByCode(preferred_language)
 else:
     language = i18n.LoadLangByCode(i18n.LangList(language_select))
+
 
 # 사이드바 생성
 with st.sidebar:
