@@ -10,9 +10,12 @@ def import_assets(exist: str, st: types.ModuleType) -> None:
         asset_data = f.read()
 
     html = "<{tag}>{content}</{tag}>"
-    match exist.split(".")[-1]:
-        case "css":
-            html = html.format(tag="style", content=asset_data)
+
+    extension = exist.split(".")[-1]
+    if extension == "css":
+        html = html.format(tag="style", content=asset_data)
+    if extension == "js":
+        html = html.format(tag="script", content=asset_data)
 
     st.markdown(
         html,

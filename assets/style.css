@@ -20,6 +20,10 @@
 section[data-testid='stSidebar'] * {
     overflow-x: hidden;
 }
+
+/*
+ * Sidebar image center
+ */
 section[data-testid='stSidebar'] div[data-testid='stImage'] {
     margin: 3rem auto;
 }

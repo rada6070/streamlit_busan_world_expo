@@ -3,7 +3,7 @@ import json
 
 from typing import Union
 
-from langcodes import Language, standardize_tag
+from langcodes import Language
 
 
 langs = []
@@ -47,7 +47,7 @@ def _get_code_from_tag(language_tag: str) -> str:
         str: 언어 코드
     """
     language = Language.get(language_tag)
-    return language.language
+    return str(language.language)
 
 
 def _load(language_code: str) -> dict:
