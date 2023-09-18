@@ -103,13 +103,20 @@ if choose == language["side_bar_sub_1"]:
     st.write("[www.expo2030busan.kr](https://www.expo2030busan.kr/index.do)")
 
 if choose == language["side_bar_sub_2"]:
+
+    col1, col2= st.columns([3,2])
+    
     st.title(language["side_bar_sub_2"])
-
+    
     # 지도 생성
+    
+    with col1 :
+        m = folium.Map(location=[35.1795543, 129.0756416], zoom_start=16)
 
-    m = folium.Map(location=[35.1795543, 129.0756416], zoom_start=16)
+        st_data = st_folium(m, width=725)
 
-    st_data = st_folium(m, width=725)
+    with col2 :
+        st.write('test')
 
 if choose == language["side_bar_sub_3"]:
     st.title(language["side_bar_sub_3"])
