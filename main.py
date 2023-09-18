@@ -166,8 +166,8 @@ if choose == language["side_bar_sub_2"]:
         st.write(' ')
         st.write(' ')
         
-        st.dataframe(df_e, width=300)
-        st.dataframe(df_r, width=300)
+        st.dataframe(df_e, width=550)
+        st.dataframe(df_r, width=550)
 
 if choose == language["side_bar_sub_3"]:
     st.title(language["side_bar_sub_3"])
