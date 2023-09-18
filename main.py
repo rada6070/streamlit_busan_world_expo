@@ -13,6 +13,7 @@ import matplotlib.pyplot as plt
 import i18n
 import style
 import assets
+import data
 
 from PIL import Image
 from streamlit_folium import st_folium
