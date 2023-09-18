@@ -167,7 +167,6 @@ if choose == language["side_bar_sub_2"]:
             ('해운대', '해동용궁사', '오륙도', '남포동', '동백섬',
              '진양호횟집', '이재모피자', '솔내음한정식', '가야밀면','선창횟집')
         )
-        st.write('선택한 장소:', option)
 
     with col1 :
         st.title(language["side_bar_sub_2"])
