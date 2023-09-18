@@ -156,8 +156,8 @@ if choose == language["side_bar_sub_2"]:
     with col2 :
         st.title('부산 명소 리스트')
         
-        st.dataframe(df_e, width=550)
-        st.dataframe(df_r, width=550)
+        st.dataframe(df_e, width=570)
+        st.dataframe(df_r, width=570)
 
         option = st.selectbox(
             '장소 선정',
