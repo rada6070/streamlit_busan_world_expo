@@ -159,7 +159,7 @@ if choose == language["side_bar_sub_2"]:
         st.write('관광지 리스트')
         st.dataframe(df_e, width=570)
 
-        wt.write('맛집 리스트')
+        st.write('맛집 리스트')
         st.dataframe(df_r, width=570)
 
         option = st.selectbox(
