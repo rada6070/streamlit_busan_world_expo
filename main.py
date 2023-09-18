@@ -154,11 +154,7 @@ if choose == language["side_bar_sub_2"]:
     # 지도 생성
     
     with col2 :
-        st.write(' ')
-        st.write(' ')
-        st.write(' ')
-        st.write(' ')
-        st.write(' ')
+        st.title('부산 명소 리스트')
         
         st.dataframe(df_e, width=550)
         st.dataframe(df_r, width=550)
