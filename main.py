@@ -109,7 +109,7 @@ if choose == language["side_bar_sub_2"]:
     # 지도 생성
     
     with col1 :
-        st.title(language["side_bar_sub_2"])
+        st.header(language["side_bar_sub_2"])
         m = folium.Map(location=[35.1795543, 129.0756416], zoom_start=16)
 
         st_data = st_folium(m, width=725)
