@@ -201,24 +201,9 @@ if choose == language["side_bar_sub_2"]:
 
     with col2 :
         st.write('test')
-        status = st.radio('관광지 정렬 선택', ['오름차순', '내림차순'])
-    	# 오름차순을 선택하면 '오름차순' 으로 값을 반환한다.
-       
-    if status == '오름차순': # 오름차순으로 정렬하고, 데이터프레임을 보여주라
-       st.dataframe(df_e.sort_values('petal_length'))
-    
-    elif status == '내림차순' : #내림차순으로 정렬하고, 데이터프레임을 보여주라
-       st.dataframe(df_e.sort_values('petal_length', ascending=False))
 
-        status = st.radio('맛집 관광지 정렬 선택', ['오름차순', '내림차순'])
-    	# 오름차순을 선택하면 '오름차순' 으로 값을 반환한다.
-       
-        if status == '오름차순': # 오름차순으로 정렬하고, 데이터프레임을 보여주라
-           st.dataframe(df_r.sort_values('petal_length'))
-        
-        elif status == '내림차순' : #내림차순으로 정렬하고, 데이터프레임을 보여주라
-           st.dataframe(df_r.sort_values('petal_length', ascending=False))
-
+        st.dataframe(df_e)
+        st.dataframe(df_r)
 
 if choose == language["side_bar_sub_3"]:
     st.title(language["side_bar_sub_3"])
