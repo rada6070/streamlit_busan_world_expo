@@ -153,12 +153,6 @@ if choose == language["side_bar_sub_2"]:
     
     # 지도 생성
     
-    with col1 :
-        st.title(language["side_bar_sub_2"])
-        m = folium.Map(location=[35.1795543, 129.0756416], zoom_start=16)
-
-        st_data = st_folium(m, width=725)
-
     with col2 :
         st.write(' ')
         st.write(' ')
@@ -175,6 +169,12 @@ if choose == language["side_bar_sub_2"]:
              '진양호횟집', '이재모피자', '솔내음한정식', '가야밀면','선창횟집')
         )
         st.write('선택한 장소:', option)
+
+    with col1 :
+        st.title(language["side_bar_sub_2"])
+        m = folium.Map(location=[35.1795543, 129.0756416], zoom_start=16)
+
+        st_data = st_folium(m, width=725)
 
 if choose == language["side_bar_sub_3"]:
     st.title(language["side_bar_sub_3"])
