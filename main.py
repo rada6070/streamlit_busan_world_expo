@@ -164,7 +164,8 @@ if choose == language["side_bar_sub_2"]:
         st.write(' ')
         st.write(' ')
         st.write(' ')
-
+        st.write(' ')
+        
         st.dataframe(df_e)
         st.dataframe(df_r)
 
