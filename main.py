@@ -178,10 +178,10 @@ if choose == language["side_bar_sub_2"]:
 if choose == language["side_bar_sub_3"]:
     st.title(language["side_bar_sub_3"])
 
-    st.image("https://ifh.cc/g/xqz2dW.png", use_column_width=True)
+    st.image("https://ifh.cc/g/2n5paZ.png", use_column_width=True)
 
 
 if choose == language["side_bar_sub_4"]:
     st.title(language["side_bar_sub_4"])
 
-    st.image("https://ifh.cc/g/VWssLr.png", use_column_width=True)
+    st.image("https://ifh.cc/g/NCYZKX.png", use_column_width=True)
