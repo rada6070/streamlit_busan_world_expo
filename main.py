@@ -160,7 +160,7 @@ if choose == language["side_bar_sub_2"]:
         st_data = st_folium(m, width=725)
 
     with col2 :
-        st.write('test')
+        st.write(' \n \n \n \n')
 
         st.dataframe(df_e)
         st.dataframe(df_r)
