@@ -1,0 +1,7 @@
+[theme]
+textColor = "black"
+primaryColor = "blue"
+secondaryBackgroundColor = "skyblue"
+
+[browser]
+gatherUsageStats = false

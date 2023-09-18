@@ -1,0 +1,22 @@
+{
+    "python.analysis.typeCheckingMode": "basic",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "python.formatting.provider": "none",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        ".venv": true,
+        ".vscode": true,
+        ".prettierrc": true,
+        "__pycache__": true,
+        "i18n/__pycache__": true,
+        "assets/__pycache__": true
+    },
+    "hide-files.files": [".venv", ".vscode", ".prettierrc", "__pycache__", "i18n/__pycache__", "assets/__pycache__"]
+}

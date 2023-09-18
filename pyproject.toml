@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "expoanalytics-i18n"
+version = "0.1.0"
+description = ""
+authors = ["kjhishere <kjhishere@proton.me>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.9.7 || >3.9.7,<4.0"
+streamlit = "^1.26.0"
+pandas = "^2.1.0"
+numpy = "^1.25.2"
+streamlit-option-menu = "^0.3.6"
+plotly = "^5.16.1"
+matplotlib = "^3.7.2"
+folium = "^0.14.0"
+streamlit-folium = "^0.13.0"
+langcodes = {extras = ["data"], version = "^3.3.0"}
+streamlit-js-eval = "^0.1.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
