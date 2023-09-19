@@ -161,7 +161,7 @@ if choose == language["side_bar_sub_2"]:
         r = requests.get('https://raw.githubusercontent.com/raqoon886/Local_HangJeongDong/master/hangjeongdong_%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C.geojson')
         c = r.content
         busan_geo = json.loads(c)
-        부산 지역의 구별 boundary 시각화
+        # 부산 지역의 구별 boundary 시각화
         
         st.title(language["side_bar_sub_2"])
         m = folium.Map(location=[35.1795543, 129.0756416], zoom_start=11)
