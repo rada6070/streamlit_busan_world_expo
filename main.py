@@ -22,6 +22,8 @@ from streamlit_folium import st_folium
 from streamlit_option_menu import option_menu
 from streamlit_js_eval import get_browser_language
 
+'''
+
 df_t = {
     '해운대': {
         '좋아요': 910,
@@ -189,3 +191,5 @@ if choose == language["side_bar_sub_4"]:
     st.title(language["side_bar_sub_4"])
 
     st.image("https://ifh.cc/g/f6PXms.png", use_column_width=True)
+
+'''
