@@ -157,23 +157,10 @@ if choose == language["side_bar_sub_2"]:
     # 지도 생성
     
     with col1 :
-        # 부산 행정구역 json raw파일(githubcontent)
-        r = requests.get('https://raw.githubusercontent.com/raqoon886/Local_HangJeongDong/master/hangjeongdong_%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C.geojson')
-        c = r.content
-        busan_geo = json.loads(c)
-        # 부산 지역의 구별 boundary 시각화
-        
         st.title(language["side_bar_sub_2"])
         m = folium.Map(location=[35.1795543, 129.0756416], zoom_start=11)
 
         st_data = st_folium(m, width=725)
-
-        folium.GeoJson(
-            busan_geo,
-            name='지역구'
-        ).add_to(m)
-        
-        m
         
     with col2 :
         st.title('부산 명소 리스트')
