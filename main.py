@@ -20,7 +20,7 @@ from streamlit_folium import st_folium
 from streamlit_option_menu import option_menu
 from streamlit_js_eval import get_browser_language
 
-df_e = {
+df_t = {
     '해운대': {
         '좋아요': 910,
         '싫어요': 129,
@@ -164,7 +164,7 @@ if choose == language["side_bar_sub_2"]:
         st.title('부산 명소 리스트')
 
         st.write('관광지 리스트')
-        st.dataframe(df_e, width=570)
+        st.dataframe(df_t, width=570)
 
         st.write('맛집 리스트')
         st.dataframe(df_r, width=570)
