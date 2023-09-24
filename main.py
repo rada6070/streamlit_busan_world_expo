@@ -23,6 +23,8 @@ from streamlit_folium import st_folium
 from streamlit_option_menu import option_menu
 from streamlit_js_eval import get_browser_language
 
+st.markdown("<h1 style='text-align: center; color: black;'>부산 EXPO 챗봇 </h1>", unsafe_allow_html=True)
+
 # 디자인 칸 2개로 분리
 col1, col2= st.columns(2)
 
@@ -50,8 +52,6 @@ with col2 :
       language = i18n.LoadLangByCode(preferred_language)
   else:
       language = i18n.LoadLangByCode(i18n.LangList(language_select))
-
-st.markdown("<h1 style='text-align: center; color: black;'>부산 EXPO 챗봇 </h1>", unsafe_allow_html=True)
 
 class ChatBot:
     def __init__(self):
