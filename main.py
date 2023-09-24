@@ -145,6 +145,8 @@ with col2 :
   else:
       language = i18n.LoadLangByCode(i18n.LangList(language_select))
 
+global answers
+
 class ChatBot:
     def __init__(self):
         # 질문과 대답을 매핑한 딕셔너리를 초기화합니다.
@@ -246,7 +248,6 @@ class ChatBot:
     def get_response(self, question):
         # 질문에 해당하는 대답을 랜덤하게 선택합니다.
         if question in self.responses:
-            global answers
             answers = self.responses[question]
             return random.choice(answers)
         else:
