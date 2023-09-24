@@ -276,6 +276,7 @@ class ChatBot:
             answers = self.responses[question]
             real_answers = random.choice(answers)
             return real_answers
+            print(real_answers)
             if real_answers[:-1] in places :
                 latitude, longitude = places[real_answers[:-1]]
                 map_selected_place = folium.Map(location=[latitude, longitude], zoom_start=15)
