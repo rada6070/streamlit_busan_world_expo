@@ -246,8 +246,8 @@ class ChatBot:
     def get_response(self, question):
         # 질문에 해당하는 대답을 랜덤하게 선택합니다.
         if question in self.responses:
-            answers = self.responses[question]
             global answers
+            answers = self.responses[question]
             return random.choice(answers)
         else:
             return "죄송해요. 제가 대답할 수 있는 내용이 아닙니다."
