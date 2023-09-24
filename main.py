@@ -257,14 +257,36 @@ chatbot = ChatBot()
 # 스트림릿 앱의 제목을 설정합니다.
 st.title("챗봇")
 
+# CSS 스타일을 적용할 HTML 요소를 생성합니다.
+style = """
+<style>
+    /* 여기에 사용자 정의 CSS 스타일을 추가하세요 */
+    .custom-button {
+        background-color: green;
+        color: white;
+        font-size: 16px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .custom-button:hover {
+        background-color: darkgreen;
+    }
+</style>
+"""
+
+# CSS 스타일을 적용합니다.
+st.markdown(style, unsafe_allow_html=True)
+
 # 각 질문에 대한 버튼을 생성하고 버튼이 클릭되면 해당 질문에 대한 답변을 출력합니다.
 question_options = list(chatbot.responses.keys())[1:]  # 첫 번째 옵션인 "---질문 선택---"은 제외합니다.
 
 for question in question_options:
-    if st.button(question):
+    if st.button(question, key=f"button_{question}", help="이 버튼을 클릭하여 질문에 대한 답변을 확인하세요."):
         response = chatbot.get_response(question)
-        st.write(f"{question}라는 질문을 받았습니다.")
-        st.write(f"{response}")
+        st.warning(f"{question}라는 질문을 받았습니다.")
+        st.success(f"{response}")
 
 st.title(language["side_bar_sub_2"])
 m = folium.Map(location=[35.1795543, 129.0756416], zoom_start=11)
