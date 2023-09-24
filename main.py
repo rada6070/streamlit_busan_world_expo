@@ -16,6 +16,7 @@ import assets
 import data
 import requests
 import json
+import random
 
 from PIL import Image
 from streamlit_folium import st_folium
@@ -51,3 +52,32 @@ with col2 :
       language = i18n.LoadLangByCode(i18n.LangList(language_select))
 
 st.markdown("<h1 style='text-align: center; color: black;'>부산 EXPO 챗봇 </h1>", unsafe_allow_html=True)
+
+class ChatBot:
+    def __init__(self):
+        self.responses = {
+            "---질문 선택---" : "질문을 선택하고 답변해주세요" ,
+            "안녕": "안녕하세요!",
+            "날씨 어때?": "오늘은 맑아요.",
+            "이름이 뭐야?": "저는 챗봇이에요."
+        }
+
+    def get_response(self, question):
+        return self.responses.get(question, "그 질문에 대한 답변을 모르겠어요.")
+
+# 챗봇 인스턴스 생성
+chatbot = ChatBot()
+
+# Streamlit 애플리케이션 정의
+st.title("부산 2030 EXPO에 대해 물어보세요!")
+st.markdown("[Expo Link](https://www.expo2030busan.kr/index.do)")
+
+# 질문 선택을 위한 버튼
+selected_question = st.selectbox("질문 선택:", list(chatbot.responses.keys()))
+
+# 버튼 클릭 이벤트 처리
+if st.button("챗봇에게 질문"):
+    bot_response = chatbot.get_response(selected_question)
+
+    # 챗봇 응답 출력
+    st.write("챗봇 응답:", bot_response)
