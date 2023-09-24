@@ -22,6 +22,9 @@ from streamlit_folium import st_folium
 from streamlit_option_menu import option_menu
 from streamlit_js_eval import get_browser_language
 
+# 넓은 화면 모드
+st.set_page_config(layout="wide")
+
 # 디자인 칸 2개로 분리
 col1, col2= st.columns(2)
 
