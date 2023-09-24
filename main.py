@@ -40,7 +40,7 @@ assets.import_assets("assets/style.css", st)
 
 # 이미지 중앙
 with col1 :
-    col11, col12, col13 = st.beta_columns([1,6,1])
+    col11, col12, col13 = st.columns([1,6,1])
 
     with col11:
         st.write("")
