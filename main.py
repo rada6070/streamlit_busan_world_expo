@@ -103,6 +103,33 @@ from streamlit_js_eval import get_browser_language
 볼트1 = "Cafe de 220VOLT 영도점을 추천합니다. 카페의 위쪽에서는 영도에서 부산바다와 시내를 내려다 볼 수 있는 매력적인 경관을 가지고 있습니다."
 볼트2 = "Cafe de 220VOLT 영도점을 추천합니다. 부산에서 힐링하면서 옥상 루프탑에서 바람을 쐴 수 있을 정도로 멋진 분위기를 가진 카페입니다."
 
+# 장소 목록
+places = {
+    '용궁사': (35.5368, 129.2051),
+    '해운대': (35.1631, 129.1635),
+    '남포동': (35.0971, 129.0346),
+    '태종대': (35.0673, 129.0916),
+    '송도해상케이블카': (35.0597, 129.1183),
+    '감천문화마을': (35.0973, 129.0125),
+    '해목': (35.0962, 129.0442),
+    '선창횟집': (35.0992, 129.0226),
+    '금수복국': (35.0952, 129.0342),
+    '이재모피자': (35.1592, 129.1751),
+    '할매국밥': (35.0951, 129.0331),
+    '해운대해수욕장': (35.1586, 129.1600),
+    '광안리': (35.1538, 129.1162),
+    '기념공원': (35.1569, 129.1290),
+    '용두산': (35.1536, 129.1665),
+    '송도': (35.2163, 128.6811),
+    '이기대': (35.1794, 129.0771),
+    '모모스커피': (35.1548, 129.1634),
+    '에테르': (35.1579, 129.1610),
+    '초량': (35.1071, 129.0336),
+    '코랄라니': (35.1466, 129.1071),
+    '오션브리즈': (35.1584, 129.1629),
+    '볼트': (35.1495, 129.1232)
+}
+
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 st.markdown("<h1 style='text-align: center; color: black;'>부산 EXPO 챗봇 </h1>", unsafe_allow_html=True)
@@ -247,7 +274,16 @@ class ChatBot:
         # 질문에 해당하는 대답을 랜덤하게 선택합니다.
         if question in self.responses:
             answers = self.responses[question]
-            return random.choice(answers)
+            real_answers = random.choice(answers)
+            return real_answers
+            if real_answers[:-1] in places :
+                latitude, longitude = places[real_answers[:-1]]
+                map_selected_place = folium.Map(location=[latitude, longitude], zoom_start=15)
+                folium.Marker([latitude, longitude], tooltip=selected_place).add_to(map_selected_place)
+                map_selected_place.save('selected_place_map.html')  # 맵을 HTML 파일로 저장
+                map_selected_place  # 맵을 화면에 표시
+            else:
+                print(f"'{selected_place}'에 대한 정보가 없습니다.")
         else:
             return "죄송해요. 제가 대답할 수 있는 내용이 아닙니다."
 
@@ -287,9 +323,4 @@ for question in question_options:
         response = chatbot.get_response(question)
         st.warning(f"{question}라는 질문을 받았습니다.")
         st.success(f"{response}")
-
-st.title(language["side_bar_sub_2"])
-m = folium.Map(location=[35.1795543, 129.0756416], zoom_start=11)
-
-st_data = st_folium(m, width=725)
 
