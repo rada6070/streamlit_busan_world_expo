@@ -82,8 +82,8 @@ if st.button("챗봇에게 질문"):
     # 챗봇 응답 출력
     st.write("챗봇 응답:", bot_response)
 
- st.title(language["side_bar_sub_2"])
-        m = folium.Map(location=[35.1795543, 129.0756416], zoom_start=11)
+st.title(language["side_bar_sub_2"])
+m = folium.Map(location=[35.1795543, 129.0756416], zoom_start=11)
 
-        st_data = st_folium(m, width=725)
+st_data = st_folium(m, width=725)
 
