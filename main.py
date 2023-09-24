@@ -275,6 +275,7 @@ class ChatBot:
         if question in self.responses:
             answers = self.responses[question]
             real_answers = random.choice(answers)
+            print(real_answers)
             return real_answers
             print(real_answers)
             if real_answers[0:3] in places :
