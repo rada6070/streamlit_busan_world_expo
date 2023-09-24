@@ -293,3 +293,5 @@ m = folium.Map(location=[35.1795543, 129.0756416], zoom_start=11)
 
 st_data = st_folium(m, width=725)
 
+if random.choice(answers) == 용궁사1 :
+    st.write('test')
