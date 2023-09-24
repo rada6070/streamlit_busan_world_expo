@@ -46,7 +46,7 @@ with col1 :
 with col2 :
   language_list = list(i18n.LangList().keys())
   language_select = str(
-      st.selectbox("Change Language", ["브라우저 기본 설정", *language_list], use_container_width=True)
+      st.selectbox("Change Language", ["브라우저 기본 설정", *language_list])
   )
   
   if language_select == "브라우저 기본 설정":
