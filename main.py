@@ -145,8 +145,6 @@ with col2 :
   else:
       language = i18n.LoadLangByCode(i18n.LangList(language_select))
 
-global answers
-
 class ChatBot:
     def __init__(self):
         # 질문과 대답을 매핑한 딕셔너리를 초기화합니다.
@@ -295,5 +293,3 @@ m = folium.Map(location=[35.1795543, 129.0756416], zoom_start=11)
 
 st_data = st_folium(m, width=725)
 
-if random.choice(answers) == 용궁사1 :
-    st.write('test')
