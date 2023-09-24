@@ -40,7 +40,7 @@ assets.import_assets("assets/style.css", st)
 with col2 :
   language_list = list(i18n.LangList().keys())
   language_select = str(
-      st.sidebar.selectbox("Change Language", ["브라우저 기본 설정", *language_list])
+      st.selectbox("Change Language", ["브라우저 기본 설정", *language_list])
   )
   
   if language_select == "브라우저 기본 설정":
