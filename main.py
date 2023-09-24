@@ -277,8 +277,8 @@ class ChatBot:
             real_answers = random.choice(answers)
             return real_answers
             print(real_answers)
-            if real_answers[:-1] in places :
-                latitude, longitude = places[real_answers[:-1]]
+            if real_answers[0:3] in places :
+                latitude, longitude = places[real_answers[0:3]]
                 map_selected_place = folium.Map(location=[latitude, longitude], zoom_start=15)
                 folium.Marker([latitude, longitude], tooltip=selected_place).add_to(map_selected_place)
                 map_selected_place.save('selected_place_map.html')  # 맵을 HTML 파일로 저장
