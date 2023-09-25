@@ -325,5 +325,10 @@ for question in question_options:
         st.warning(f"{question}라는 질문을 받았습니다.")
         st.success(f"{response}")
 
+# 부산 중심 좌표
+center_lat, center_lon = 35.1796, 129.0756
 
+# Folium 지도 객체 생성
+m = folium.Map(location=[center_lat, center_lon], zoom_start=10)  # 초기 지도 위치와 확대 정도 설정
+m
 
