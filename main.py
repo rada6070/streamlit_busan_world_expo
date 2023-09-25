@@ -325,6 +325,5 @@ for question in question_options:
         st.warning(f"{question}라는 질문을 받았습니다.")
         st.success(f"{response}")
 
-m = folium.Map(location=[35, 126],zoom_start=17)
-m
+
 
