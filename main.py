@@ -46,10 +46,10 @@ with col1 :
         st.write(' ')
 
 with col2 :
+    st.write('1')
     
 
     
-
 
 df = pd.read_excel("data.xlsx")
 
