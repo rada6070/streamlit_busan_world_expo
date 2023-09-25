@@ -355,9 +355,13 @@ for question in question_options:
         st.success(f"{response}")
 
 # 부산 중심 좌표
-center_lat, center_lon = 35.1796, 129.0756
+center_lat, center_lon = 35.1594965345398, 129.162576586723
 
 # Folium 지도 객체 생성
+st.title('해운대의 지도')
 m = folium.Map(location=[center_lat, center_lon], zoom_start=10)  # 초기 지도 위치와 확대 정도 설정
 m
+
+st.title('해운대의 주소')
+st.write('부산광역시 해운대구')
 
