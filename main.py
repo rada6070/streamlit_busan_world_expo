@@ -17,6 +17,7 @@ import data
 import requests
 import json
 import random
+import openpyxl
 
 from PIL import Image
 from streamlit_folium import st_folium
