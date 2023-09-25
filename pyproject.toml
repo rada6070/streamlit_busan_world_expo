@@ -18,6 +18,9 @@ streamlit-folium = "^0.13.0"
 langcodes = {extras = ["data"], version = "^3.3.0"}
 streamlit-js-eval = "^0.1.5"
 
+[tool.poetry.group.dev.dependencies]
+requests = "^2.31.0"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

@@ -1,28 +1,22 @@
 {
-    "side_bar_main": "Busan attraction recommendation program",
-    "side_bar_sub_1": "Promotion of Busan World Expo",
-    "side_bar_sub_2": "Map of Busan",
-    "side_bar_sub_3": "Busan Tourist Site Preference Graph",
-    "side_bar_sub_4": "Busan Restaurant Preference Graph",
-
-    "page_1_title": "Promotion of Busan World Expo",
-    "page_1_explain_1": "Busan World Expo 2030 is an international event that displays cultures and technologies from around the world.",
-
-    "page_1_subheader_1": "Key Event Information",
-    "page_1_explain_when": "Date: May 1, 2030 - October 31, 2030",
+    "side_bar_main": "Busan Attractions Recommendation Program",
+    "side_bar_sub_1": "Promoting the Busan World Expo",
+    "side_bar_sub_2": "Busan map",
+    "side_bar_sub_3": "Busan tourist attraction preference graph",
+    "side_bar_sub_4": "Busan restaurant preference graph",
+    "page_1_title": "Busan 2030 World Expo",
+    "page_1_explain_1": "The Busan World Expo 2030 is an international event that showcases cultures and technologies from around the world.",
+    "page_1_subheader_1": "About upcoming events",
+    "page_1_explain_when": "Dates: May 1 - October 31, 2030",
     "page_1_explain_where": "Location: Busan, South Korea",
-    "page_1_explain_thema": "Theme: 'Innovation and Sustainability Opening a New World'",
-
-    "page_1_image_gall": "Image Gallery",
-
-    "page_1_subheader_2": "Learn more information",
+    "page_1_explain_thema": "Theme: 'Innovation and sustainability opening up new worlds'",
+    "page_1_image_gall": "Image gallery",
+    "page_1_subheader_2": "Learn more",
     "page_1_explain_2": "Check out the official website for more information:",
-
-    "page_2_title": "Map of Busan",
-
-    "page_3_title": "Busan Tourist Site Preference Graph",
-    "page_3_columns_1": "Gamcheon Culture Village",
+    "page_2_title": "Busan map",
+    "page_3_title": "Busan tourist attraction preference graph",
+    "page_3_columns_1": "Gamcheon Cultural Village",
     "page_3_columns_2": "Jagalchi Market",
-    "page_3_columns_3": "International Market",
-    "page_3_columns_4": "Bujeon Market"
+    "page_3_columns_3": "International markets",
+    "page_3_columns_4": "Failure Markets"
 }
