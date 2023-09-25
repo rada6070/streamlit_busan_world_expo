@@ -275,16 +275,7 @@ class ChatBot:
         if question in self.responses:
             answers = self.responses[question]
             real_answers = random.choice(answers)
-            print(real_answers)
-            if real_answers[0:3] in places :
-                latitude, longitude = places[real_answers[0:3]]
-                map_selected_place = folium.Map(location=[latitude, longitude], zoom_start=15)
-                folium.Marker([latitude, longitude], tooltip=selected_place).add_to(map_selected_place)
-                map_selected_place.save('selected_place_map.html')  # 맵을 HTML 파일로 저장
-                map_selected_place  # 맵을 화면에 표시
-                return real_answers
-            else:
-                print(f"'{selected_place}'에 대한 정보가 없습니다.")
+            return real_answers
         else:
             return "죄송해요. 제가 대답할 수 있는 내용이 아닙니다."
 
