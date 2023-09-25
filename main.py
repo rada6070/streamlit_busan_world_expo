@@ -51,7 +51,7 @@ with col2 :
     
 
 
-df = pd.read_excel("C:/Users/USER/Desktop/data.xlsx")
+df = pd.read_excel("data.xlsx")
 
 def bring_data():
     spots_df = df[df['분류'] == '엑스포']
