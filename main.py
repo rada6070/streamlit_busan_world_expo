@@ -53,51 +53,107 @@ with col2 :
 
 df = pd.read_excel("data.xlsx")
 
-def bring_data():
+def tourist_data():
+    spots_df = df[df['분류'] == '관광지']
+    spots_df = spots_df.reset_index(drop=True)
+    Q0 = spots_df['질문']
+    P0 = spots_df['장소']
+    A0 = spots_df['답변']
+    latitude0 = spots_df['위도']
+    longitude0 = spots_df['경도']
+    return Q0, P0, A0, latitude0, longitude0
+Q0, P0, A0, latitude0, longitude0 = tourist_data()
+
+def restaurant_data():
+    spots_df = df[df['분류'] == '음식점']
+    spots_df = spots_df.reset_index(drop=True)
+    Q1 = spots_df['질문']
+    P1 = spots_df['장소']
+    A1 = spots_df['답변']
+    latitude1 = spots_df['위도']
+    longitude1 = spots_df['경도']
+    return Q1, P1, A1, latitude1, longitude1
+Q1, P1, A1, latitude1, longitude1 = restaurant_data()
+
+def nature_data():
+    spots_df = df[df['분류'] == '자연/공원']
+    spots_df = spots_df.reset_index(drop=True)
+    Q2 = spots_df['질문']
+    P2 = spots_df['장소']
+    A2 = spots_df['답변']
+    latitude2 = spots_df['위도']
+    longitude2 = spots_df['경도']
+    return Q2, P2, A2, latitude2, longitude2
+Q2, P2, A2, latitude2, longitude2 = nature_data()
+
+def cafe_data():
+    spots_df = df[df['분류'] == '카페/디저트']
+    spots_df = spots_df.reset_index(drop=True)
+    Q3 = spots_df['질문']
+    P3 = spots_df['장소']
+    A3 = spots_df['답변']
+    latitude3 = spots_df['위도']
+    longitude3 = spots_df['경도']
+    return Q3, P3, A3, latitude3, longitude3
+Q3, P3, A3, latitude3, longitude3 = cafe_data()
+
+def expect_data():
+    spots_df = df[df['분류'] == '기대효과']
+    spots_df = spots_df.reset_index(drop=True)
+    Q4 = spots_df['질문']
+    P4 = spots_df['장소']
+    A4 = spots_df['답변']
+    latitude4 = spots_df['위도']
+    longitude4 = spots_df['경도']
+    return Q4, P4, A4, latitude4, longitude4
+Q4, P4, A4, latitude4, longitude4 = expect_data()
+
+def expo_data():
     spots_df = df[df['분류'] == '엑스포']
     spots_df = spots_df.reset_index(drop=True)
-    Q = spots_df['질문']
-    P = spots_df['장소']
-    A = spots_df['답변']
-    latitude= spots_df['위도']
-    longitude = spots_df['경도']
-    return Q, P, A, latitude, longitude
-Q, P, A, latitude, longitude = bring_data()
+    Q5 = spots_df['질문']
+    P5 = spots_df['장소']
+    A5 = spots_df['답변']
+    latitude5 = spots_df['위도']
+    longitude5 = spots_df['경도']
+    return Q5, P5, A5, latitude5, longitude5
+Q5, P5, A5, latitude5, longitude5 = expo_data()
 
+tourist_btn_clicked = st.button(f'{Q0[0]}', key='tourist_btn')
+tourist_next_btn_clicked = st.button('next', key='next_btn')
+tourist_back_btn_clicked = st.button('back', key='back_btn')
 
-f_btn_clicked = st.button(f'{Q[0]}', key='test_btn')
-n_btn_clicked = st.button('next', key='next_btn')
-b_btn_clicked = st.button('back', key='back_btn')
+restaurant_btn_clicked = st.button(f'{Q1[0]}', key='restaurant_btn')
+
+nature_btn_clicked = st.button(f'{Q2[0]}', key='nature_btn')
+
+cafe_btn_clicked = st.button(f'{Q3[0]}', key='cafe_btn')
+
+expect_btn_clicked = st.button(f'{Q4[0]}', key='expect_btn')
+
+expo_btn_clicked = st.button(f'{Q5[0]}', key='expo_btn')
 
 i = st.session_state.get('i', 0)
 
-if f_btn_clicked:
+if tourist_btn_clicked:
     i = 0
     st.session_state['i'] = i
-    st.write(f"장소: {P[i]}")
-    st.write(f"답변: {A[i]}")
-    st.write(f"위도: {latitude[i]}")
-    st.write(f"경도: {longitude[i]}")
-    
-    
-if n_btn_clicked:
+    st.success(f"장소: {P0[i]}")
+    st.info(f"답변: {A0[i]}")
+if tourist_next_btn_clicked:
     if i >= 4 :
         i = 4
-        print('마지막입니다.')
+        st.warning('마지막입니다.')
     elif i < 0 :
         i = 0
         st.warning('처음입니다.')
     else :
         i += 1
         st.session_state['i'] = i
-        st.write(f"장소: {P[i]}")
-        st.write(f"답변: {A[i]}")
-        st.write(f"위도: {latitude[i]}")
-        st.write(f"경도: {longitude[i]}")
-
+        st.success(f"장소: {P0[i]}")
+        st.info(f"답변: {A0[i]}")
     
-    
-if b_btn_clicked:
+if tourist_back_btn_clicked:
     if i > 4 :
         i = 4
         st.warning('마지막입니다.')
@@ -107,10 +163,8 @@ if b_btn_clicked:
     else:
         i -= 1
         st.session_state['i'] = i
-        st.write(f"장소: {P[i]}")
-        st.write(f"답변: {A[i]}")
-        st.write(f"위도: {latitude[i]}")
-        st.write(f"경도: {longitude[i]}")
+        st.success(f"장소: {P0[i]}")
+        st.info(f"답변: {A0[i]}")
 
 
 
