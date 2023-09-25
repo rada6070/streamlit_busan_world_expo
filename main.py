@@ -24,10 +24,7 @@ from streamlit_folium import st_folium
 from streamlit_option_menu import option_menu
 from streamlit_js_eval import get_browser_language
 
-try:
-    preferred_language = i18n.FindLangByTag(get_browser_language())
-except AttributeError:
-    preferred_language = "ko"
+
 
 assets.import_assets("assets/style.css", st)
 
@@ -49,15 +46,7 @@ with col1 :
         st.write(' ')
 
 with col2 :
-    language_list = list(i18n.LangList().keys())
-    language_select = str(
-        st.selectbox("Change Language", ["브라우저 기본 설정", *language_list])
-    )
     
-    if language_select == "브라우저 기본 설정":
-        language = i18n.LoadLangByCode(preferred_language)
-    else:
-        language = i18n.LoadLangByCode(i18n.LangList(language_select))
 
     
 
