@@ -327,8 +327,7 @@ for question in question_options:
 
 m = folium.Map(location=[35, 126],
                zoom_start=17, 
-               width=750, 
-               height=500
+               width=750
               )
 m
 
