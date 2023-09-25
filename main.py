@@ -48,7 +48,7 @@ with col1 :
 with col2 :
     st.write('1')
 
-df = pd.read_excel("C:/Users/USER/Desktop/data.xlsx")
+df = pd.read_excel("data.xlsx")
 
 def tourist_data():
     spots_df = df[df['분류'] == '관광지']
