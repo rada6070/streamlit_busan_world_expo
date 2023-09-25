@@ -37,6 +37,8 @@ st.title('해운대의 지도')
 
 m = folium.Map(location=[35.1795543, 129.0756416], zoom_start=11)
 
+folium.Marker(location=[35.1795543, 129.0756416]).add_to(m)
+
 st_data = st_folium(m, width=725)
 
 
