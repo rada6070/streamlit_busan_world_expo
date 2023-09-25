@@ -47,9 +47,7 @@ with col1 :
 
 with col2 :
     st.write('1')
-    
 
-    
 
 df = pd.read_excel("data.xlsx")
 
@@ -130,8 +128,8 @@ nature_btn_clicked = st.button(f'{Q2[0]}', key='nature_btn')
 cafe_btn_clicked = st.button(f'{Q3[0]}', key='cafe_btn')
 expect_btn_clicked = st.button(f'{Q4[0]}', key='expect_btn')
 expo_btn_clicked = st.button(f'{Q5[0]}', key='expo_btn')
-expo_next_btn_clicked = st.button('다음 질문', key='expo_next_btn')
-expo_back_btn_clicked = st.button('이전 질문', key='expo_back_btn')
+expo_next_btn_clicked = st.button('다음 답변', key='expo_next_btn')
+expo_back_btn_clicked = st.button('이전 답변', key='expo_back_btn')
 
 i = st.session_state.get('i', 0)
 x = st.session_state.get('x', 0)
@@ -142,15 +140,19 @@ y = st.session_state.get('y', 0)
 # 관광지 버튼
 if tourist_btn_clicked:
     i = 0
+    x = P0
+    y = A0
     st.session_state['i'] = i
     st.session_state['x'] = P0
     st.session_state['y'] = A0
-    st.info(f"장소: {x[i]}")
+    st.success(f"장소: {x[i]}")
     st.info(f"답변: {y[i]}")
         
 # 음식점 버튼
 if restaurant_btn_clicked:
     i = 0
+    x = P1
+    y = A1
     st.session_state['x'] = P1
     st.session_state['y'] = A1
     st.session_state['i'] = i
@@ -160,6 +162,8 @@ if restaurant_btn_clicked:
 # 자연/공원 버튼
 if nature_btn_clicked:
     i = 0
+    x = P2
+    y = A2
     st.session_state['x'] = P2
     st.session_state['y'] = A2
     st.session_state['i'] = i
@@ -169,6 +173,8 @@ if nature_btn_clicked:
 # 카페/디저트 버튼
 if cafe_btn_clicked:
     i = 0
+    x = P3
+    y = A3
     st.session_state['x'] = P3
     st.session_state['y'] = A3
     st.session_state['i'] = i
@@ -178,6 +184,8 @@ if cafe_btn_clicked:
 # 기대효과 버튼
 if expect_btn_clicked:
     i = 0
+    x = P4
+    y = A4
     st.session_state['x'] = P4
     st.session_state['y'] = A4
     st.session_state['i'] = i
@@ -187,6 +195,8 @@ if expect_btn_clicked:
 # 엑스포 버튼
 if expo_btn_clicked:
     i = 0
+    x = P5
+    y = A5
     st.session_state['x'] = P5
     st.session_state['y'] = A5
     st.session_state['i'] = i
@@ -214,7 +224,6 @@ if expo_back_btn_clicked: #이전 버튼
         st.session_state['i'] = i
         st.success(f"장소: {x[i]}")
         st.info(f"답변: {y[i]}")
-
 
 # 부산 중심 좌표
 center_lat, center_lon = 35.1594965345398, 129.162576586723
