@@ -17,7 +17,7 @@ folium = "^0.14.0"
 streamlit-folium = "^0.13.0"
 langcodes = {extras = ["data"], version = "^3.3.0"}
 streamlit-js-eval = "^0.1.5"
-openpyxl = "^0.1.1"
+openpyxl = "^3.1.2"
 
 [tool.poetry.group.dev.dependencies]
 requests = "^2.31.0"
