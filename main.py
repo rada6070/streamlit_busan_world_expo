@@ -62,7 +62,6 @@ def tourist_data():
     latitude0 = spots_df['위도']
     longitude0 = spots_df['경도']
     return Q0, P0, A0, latitude0, longitude0
-Q0, P0, A0, latitude0, longitude0 = tourist_data()
 
 def restaurant_data():
     spots_df = df[df['분류'] == '음식점']
@@ -73,7 +72,6 @@ def restaurant_data():
     latitude1 = spots_df['위도']
     longitude1 = spots_df['경도']
     return Q1, P1, A1, latitude1, longitude1
-Q1, P1, A1, latitude1, longitude1 = restaurant_data()
 
 def nature_data():
     spots_df = df[df['분류'] == '자연/공원']
@@ -84,7 +82,6 @@ def nature_data():
     latitude2 = spots_df['위도']
     longitude2 = spots_df['경도']
     return Q2, P2, A2, latitude2, longitude2
-Q2, P2, A2, latitude2, longitude2 = nature_data()
 
 def cafe_data():
     spots_df = df[df['분류'] == '카페/디저트']
@@ -95,7 +92,6 @@ def cafe_data():
     latitude3 = spots_df['위도']
     longitude3 = spots_df['경도']
     return Q3, P3, A3, latitude3, longitude3
-Q3, P3, A3, latitude3, longitude3 = cafe_data()
 
 def expect_data():
     spots_df = df[df['분류'] == '기대효과']
@@ -106,7 +102,6 @@ def expect_data():
     latitude4 = spots_df['위도']
     longitude4 = spots_df['경도']
     return Q4, P4, A4, latitude4, longitude4
-Q4, P4, A4, latitude4, longitude4 = expect_data()
 
 def expo_data():
     spots_df = df[df['분류'] == '엑스포']
@@ -117,55 +112,108 @@ def expo_data():
     latitude5 = spots_df['위도']
     longitude5 = spots_df['경도']
     return Q5, P5, A5, latitude5, longitude5
+
+
+#반복문으로 만들 수 있을것 처럼 보임
+Q0, P0, A0, latitude0, longitude0 = tourist_data()
+Q1, P1, A1, latitude1, longitude1 = restaurant_data()
+Q2, P2, A2, latitude2, longitude2 = nature_data()
+Q3, P3, A3, latitude3, longitude3 = cafe_data()
+Q4, P4, A4, latitude4, longitude4 = expect_data()
 Q5, P5, A5, latitude5, longitude5 = expo_data()
 
+
+
 tourist_btn_clicked = st.button(f'{Q0[0]}', key='tourist_btn')
-tourist_next_btn_clicked = st.button('next', key='next_btn')
-tourist_back_btn_clicked = st.button('back', key='back_btn')
-
 restaurant_btn_clicked = st.button(f'{Q1[0]}', key='restaurant_btn')
-
 nature_btn_clicked = st.button(f'{Q2[0]}', key='nature_btn')
-
 cafe_btn_clicked = st.button(f'{Q3[0]}', key='cafe_btn')
-
 expect_btn_clicked = st.button(f'{Q4[0]}', key='expect_btn')
-
 expo_btn_clicked = st.button(f'{Q5[0]}', key='expo_btn')
+expo_next_btn_clicked = st.button('다음 질문', key='expo_next_btn')
+expo_back_btn_clicked = st.button('이전 질문', key='expo_back_btn')
 
 i = st.session_state.get('i', 0)
+x = st.session_state.get('x', 0)
+y = st.session_state.get('y', 0)
 
+
+
+# 관광지 버튼
 if tourist_btn_clicked:
     i = 0
     st.session_state['i'] = i
-    st.success(f"장소: {P0[i]}")
-    st.info(f"답변: {A0[i]}")
-if tourist_next_btn_clicked:
-    if i >= 4 :
-        i = 4
+    st.session_state['x'] = P0
+    st.session_state['y'] = A0
+    st.info(f"장소: {x[i]}")
+    st.info(f"답변: {y[i]}")
+        
+# 음식점 버튼
+if restaurant_btn_clicked:
+    i = 0
+    st.session_state['x'] = P1
+    st.session_state['y'] = A1
+    st.session_state['i'] = i
+    st.success(f"장소: {x[i]}")
+    st.info(f"답변: {y[i]}")
+    
+# 자연/공원 버튼
+if nature_btn_clicked:
+    i = 0
+    st.session_state['x'] = P2
+    st.session_state['y'] = A2
+    st.session_state['i'] = i
+    st.success(f"장소: {x[i]}")
+    st.info(f"답변: {y[i]}")
+
+# 카페/디저트 버튼
+if cafe_btn_clicked:
+    i = 0
+    st.session_state['x'] = P3
+    st.session_state['y'] = A3
+    st.session_state['i'] = i
+    st.success(f"장소: {x[i]}")
+    st.info(f"답변: {y[i]}")
+
+# 기대효과 버튼
+if expect_btn_clicked:
+    i = 0
+    st.session_state['x'] = P4
+    st.session_state['y'] = A4
+    st.session_state['i'] = i
+    st.success(f"장소: {x[i]}")
+    st.info(f"답변: {y[i]}")
+
+# 엑스포 버튼
+if expo_btn_clicked:
+    i = 0
+    st.session_state['x'] = P5
+    st.session_state['y'] = A5
+    st.session_state['i'] = i
+    st.success(f"장소: {x[i]}")
+    st.info(f"답변: {y[i]}")
+    
+    
+if expo_next_btn_clicked: #다음 버튼
+    if i >= len(x) -1 :
+        i = len(x) -1
         st.warning('마지막입니다.')
-    elif i < 0 :
-        i = 0
-        st.warning('처음입니다.')
     else :
         i += 1
         st.session_state['i'] = i
-        st.success(f"장소: {P0[i]}")
-        st.info(f"답변: {A0[i]}")
-    
-if tourist_back_btn_clicked:
-    if i > 4 :
-        i = 4
-        st.warning('마지막입니다.')
+        st.success(f"장소: {x[i]}")
+        st.info(f"답변: {y[i]}") 
+        
+           
+if expo_back_btn_clicked: #이전 버튼
     if i <= 0 :
         i = 0
         st.warning('처음입니다.')
     else:
         i -= 1
         st.session_state['i'] = i
-        st.success(f"장소: {P0[i]}")
-        st.info(f"답변: {A0[i]}")
-
+        st.success(f"장소: {x[i]}")
+        st.info(f"답변: {y[i]}")
 
 
 # 부산 중심 좌표
