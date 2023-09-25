@@ -48,8 +48,7 @@ with col1 :
 with col2 :
     st.write('1')
 
-
-df = pd.read_excel("data.xlsx")
+df = pd.read_excel("C:/Users/USER/Desktop/data.xlsx")
 
 def tourist_data():
     spots_df = df[df['분류'] == '관광지']
@@ -224,7 +223,7 @@ if expo_back_btn_clicked: #이전 버튼
         st.session_state['i'] = i
         st.success(f"장소: {x[i]}")
         st.info(f"답변: {y[i]}")
-
+        
 # 부산 중심 좌표
 center_lat, center_lon = 35.1594965345398, 129.162576586723
 
