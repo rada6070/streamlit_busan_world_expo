@@ -34,7 +34,7 @@ assets.import_assets("assets/style.css", st)
 
 st.markdown("<h1 style='text-align: center; color: black;'>부산 EXPO 관광지 추천 </h1>", unsafe_allow_html=True)
 
-col1, col2 = columns([1,1])
+col1, col2 = columns(2)
 
 with col1 :
     col11, col12, col13 = columns([1,6,1])
