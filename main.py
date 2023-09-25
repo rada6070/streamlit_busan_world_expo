@@ -17,6 +17,7 @@ import data
 import requests
 import json
 import random
+import openpyxl
 
 from PIL import Image
 from streamlit_folium import st_folium
@@ -26,6 +27,41 @@ from streamlit_js_eval import get_browser_language
 
 
 st.markdown("<h1 style='text-align: center; color: black;'>부산 EXPO 관광지 추천 </h1>", unsafe_allow_html=True)
+
+
+df = pd.read_excel("data.xlsx")
+def bring_data():
+    spots_df = df[df['분류'] == '엑스포']
+    spots_df = spots_df.reset_index(drop=True)
+    Q = spots_df['질문']
+    P = spots_df['장소']
+    A = spots_df['답변']
+    latitude= spots_df['위도']
+    longitude = spots_df['경도']
+    return Q, P, A, latitude, longitude
+Q, P, A, latitude, longitude = bring_data()
+
+
+f_btn_clicked = st.button(f'{Q[0]}', key='test_btn')
+n_btn_clicked = st.button('next', key='next_btn')
+
+i = st.session_state.get('i', 0)
+
+if f_btn_clicked:
+    i = 0
+    st.session_state['i'] = i
+    st.write(f"장소: {P[i]}")
+    st.write(f"답변: {A[i]}")
+    st.write(f"위도: {latitude[i]}")
+    st.write(f"경도: {longitude[i]}")
+    
+if n_btn_clicked:
+    i += 1
+    st.session_state['i'] = i
+    st.write(f"장소: {P[i]}")
+    st.write(f"답변: {A[i]}")
+    st.write(f"위도: {latitude[i]}")
+    st.write(f"경도: {longitude[i]}")
 
 
 
