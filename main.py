@@ -170,7 +170,7 @@ places = {
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-st.markdown("<h1 style='text-align: center; color: black;'>부산 EXPO 챗봇 </h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: black;'>부산 EXPO 관광지 추천 </h1>", unsafe_allow_html=True)
 
 # 디자인 칸 2개로 분리
 col1, col2= st.columns([1,1])
