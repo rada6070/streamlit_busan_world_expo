@@ -138,7 +138,6 @@ def expo_data():
     longitude5 = spots_df['경도']
     return Q5, P5, A5, latitude5, longitude5
 
-
 #반복문으로 만들 수 있을것 처럼 보임
 Q0, P0, A0, latitude0, longitude0 = tourist_data()
 Q1, P1, A1, latitude1, longitude1 = restaurant_data()
@@ -146,8 +145,6 @@ Q2, P2, A2, latitude2, longitude2 = nature_data()
 Q3, P3, A3, latitude3, longitude3 = cafe_data()
 Q4, P4, A4, latitude4, longitude4 = expect_data()
 Q5, P5, A5, latitude5, longitude5 = expo_data()
-
-
 
 tourist_btn_clicked = st.button(f'{Q0[0]}', key='tourist_btn')
 restaurant_btn_clicked = st.button(f'{Q1[0]}', key='restaurant_btn')
@@ -157,9 +154,6 @@ expect_btn_clicked = st.button(f'{Q4[0]}', key='expect_btn')
 expo_btn_clicked = st.button(f'{Q5[0]}', key='expo_btn')
 expo_next_btn_clicked = st.button('다음 답변', key='expo_next_btn')
 expo_back_btn_clicked = st.button('이전 답변', key='expo_back_btn')
-
-
-
 
 # 관광지 버튼
 if tourist_btn_clicked:
@@ -276,13 +270,11 @@ if expo_back_btn_clicked: #이전 버튼
         st.info(f"답변: {y[i]}")
  
 st.title('부산의 지도')
-
-
  
 latitude_value = latitude[i]
 longitude_value = longitude[i]
 
-m = folium.Map(location=[latitude_value, longitude_value], zoom_start=14, use_column_width=True, use_column_height=True, width=700, height=700)
+m = folium.Map(location=[latitude_value, longitude_value], zoom_start=7, use_column_width=True, use_column_height=True, width=700, height=700)
 
 folium.Marker(
     location=[latitude_value, longitude_value],
