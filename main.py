@@ -18,6 +18,7 @@ import requests
 import json
 import random
 import openpyxl
+import googletrans
 
 from PIL import Image
 from streamlit_folium import st_folium
