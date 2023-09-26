@@ -35,11 +35,3 @@ section[data-testid='stSidebar'] * {
 section[data-testid='stSidebar'] div[data-testid='stImage'] {
     margin: 3rem auto;
 }
-
-
-/*
- *
- */
-div[title^="streamlit_folium"] {
-    width: 100% !important;
-}
