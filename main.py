@@ -21,7 +21,7 @@ import openpyxl
 import googletrans
 
 from PIL import Image
-from streamlit_folium import st_folium
+from streamlit_folium import st_folium, folium_static
 from streamlit_option_menu import option_menu
 from streamlit_js_eval import get_browser_language
 
