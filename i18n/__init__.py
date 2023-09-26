@@ -66,7 +66,7 @@ def _load(language_code: str) -> dict:
     assert os.path.exists(path), f"File {target_file} not found"
 
     with open(path, "r", encoding="utf-8") as f:
-        return json.load(f.read())
+        return json.load(f)
 
 
 def DisplayLang(lang_code: str) -> str:
