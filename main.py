@@ -41,7 +41,7 @@ with col1 :
         st.write(' ')
 
     with col12 :
-        st.image('https://i.namu.wiki/i/tvGyhYywWMsAcu6DB_LNqDgXsPeaXzDt4Su8mc8pckqINu1ceRlXh6mqVaquCFE9vCBk9Pduf9xkzWr0gcC_Ng.svg', width=85)
+        st.image('https://i.namu.wiki/i/tvGyhYywWMsAcu6DB_LNqDgXsPeaXzDt4Su8mc8pckqINu1ceRlXh6mqVaquCFE9vCBk9Pduf9xkzWr0gcC_Ng.svg', use_column_width=True)
 
     with col13 :
         st.write(' ')
