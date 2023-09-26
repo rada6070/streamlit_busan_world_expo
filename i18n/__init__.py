@@ -1,6 +1,5 @@
 import os
 import json
-import pandas as pd
 
 from typing import Union
 
@@ -67,8 +66,7 @@ def _load(language_code: str) -> dict:
     assert os.path.exists(path), f"File {target_file} not found"
 
     with open(path, "r", encoding="utf-8") as f:
-        json_file = json.load(f)
-    return pd.DataFrame(json_file)
+        return json.load(f.read())
 
 
 def DisplayLang(lang_code: str) -> str:
