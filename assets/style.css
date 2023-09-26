@@ -40,6 +40,6 @@ section[data-testid='stSidebar'] div[data-testid='stImage'] {
 /*
  *
  */
-#map_div {
+div[title^="streamlit_folium"] {
     width: 100% !important;
 }
