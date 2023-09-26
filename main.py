@@ -41,7 +41,7 @@ with col1 :
         st.write(' ')
 
     with col12 :
-        st.image('https://www.google.com/url?sa=i&url=https%3A%2F%2Fnamu.wiki%2Fw%2F2030%2520%25EC%2597%2591%25EC%258A%25A4%25ED%258F%25AC&psig=AOvVaw10pGAPotmCg2jJANxmf4Rl&ust=1695799245221000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCOjL187ex4EDFQAAAAAdAAAAABAE', width=85)
+        st.image('https://i.namu.wiki/i/tvGyhYywWMsAcu6DB_LNqDgXsPeaXzDt4Su8mc8pckqINu1ceRlXh6mqVaquCFE9vCBk9Pduf9xkzWr0gcC_Ng.svg', width=85)
 
     with col13 :
         st.write(' ')
