@@ -286,7 +286,7 @@ m = folium.Map(location=[latitude_value, longitude_value], zoom_start=14, use_co
 
 folium.Marker(
     location=[latitude_value, longitude_value],
-    popup=f"{x[i]}",
+    popup="Here",
     icon=folium.Icon(color="purple", icon="info-sign"),
 ).add_to(m)
 
