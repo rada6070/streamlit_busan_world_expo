@@ -269,4 +269,4 @@ longitude_value = longitude[i]
 
 m = folium.Map(location=[latitude_value, longitude_value], zoom_start=14)
 
-st_data = st_folium(m, 500)
+st_data = st_folium(m, 725)
