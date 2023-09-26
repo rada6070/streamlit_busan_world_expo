@@ -29,6 +29,12 @@ from streamlit_js_eval import get_browser_language
 
 assets.import_assets("assets/style.css", st)
 
+try:
+    preferred_language = i18n.FindLangByTag(get_browser_language())
+except AttributeError:
+    preferred_language = "ko"
+    
+language_list = list(i18n.LangList().keys())
 
 
 st.markdown("<h1 style='text-align: center; color: black;'>부산 EXPO 관광지 추천 </h1>", unsafe_allow_html=True)
@@ -48,12 +54,6 @@ with col1 :
         st.write(' ')
 
 with col2 :
-    try:
-        preferred_language = i18n.FindLangByTag(get_browser_language())
-    except AttributeError:
-        preferred_language = "ko"
-
-    language_list = list(i18n.LangList().keys())
     language_select = str(
         st.selectbox("Change Language", ["브라우저 기본 설정", *language_list])
     )
