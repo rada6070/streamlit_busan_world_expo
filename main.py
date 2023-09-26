@@ -267,15 +267,6 @@ st.title('부산의 지도')
 latitude_value = latitude[i]
 longitude_value = longitude[i]
 
+m = folium.Map(location=[latitude_value, longitude_value], zoom_start=14)
 
-data = pd.DataFrame({
-'latitude': [latitude_value],
-'longitude': [longitude_value]
-})
-st.map(data)
-
-
-
-# 두 번째 탭에 해운대 지도 추가
-
-st.warning('미완')
+st_data = st_folium(m,use_column_width=True)
