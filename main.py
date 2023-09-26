@@ -37,7 +37,7 @@ except AttributeError:
 language_list = list(i18n.LangList().keys())
 
 
-st.markdown("<h1 style='text-align: center; color: black;'>부산 EXPO 관광지 추천 </h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;v '>부산 EXPO 관광지 추천 </h1>", unsafe_allow_html=True)
 
 col1, col2 = st.columns(2)
 
