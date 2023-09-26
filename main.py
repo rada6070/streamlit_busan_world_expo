@@ -40,7 +40,8 @@ with col1 :
         st.write(' ')
 
     with col12 :
-        st.image('https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.facebook.com%2Fbusanworldexpo2030%2Fevents%2F%3Flocale%3Dda_DK&psig=AOvVaw3aKQWCRcP-dcUyxJ7seRvl&ust=1695747425465000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCNjkjcmdxoEDFQAAAAAdAAAAABAk', width=85)
+        st.image('https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.facebook.com%2Fbusanworldexpo2030%2Fevents%2F%3Flocale%3Dda_DK&psig=AOvVaw3aKQWCRcP-dcUyxJ7seRvl&ust=1695747425465000&
+        source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCNjkjcmdxoEDFQAAAAAdAAAAABAk', width=85)
 
     with col13 :
         st.write(' ')
@@ -48,7 +49,17 @@ with col1 :
 with col2 :
     st.write('1')
 
-df = pd.read_excel("data.xlsx")
+i = st.session_state.get('i', 0)
+x = st.session_state.get('x', 0)
+y = st.session_state.get('y', 0)
+latitude = st.session_state.get('latitude', 0)
+longitude = st.session_state.get('longitude', 0)
+latitude = st.session_state.get('latitude', [35.1594965345398])
+longitude = st.session_state.get('longitude', [129.162576586723])
+
+# 첫번째 탭에 챗봇 영역 추가
+
+df = pd.read_excel("C:/Users/17/Desktop/data.xlsx")
 
 def tourist_data():
     spots_df = df[df['분류'] == '관광지']
@@ -130,9 +141,6 @@ expo_btn_clicked = st.button(f'{Q5[0]}', key='expo_btn')
 expo_next_btn_clicked = st.button('다음 답변', key='expo_next_btn')
 expo_back_btn_clicked = st.button('이전 답변', key='expo_back_btn')
 
-i = st.session_state.get('i', 0)
-x = st.session_state.get('x', 0)
-y = st.session_state.get('y', 0)
 
 
 
@@ -141,31 +149,43 @@ if tourist_btn_clicked:
     i = 0
     x = P0
     y = A0
+    latitude = latitude0
+    longitude = longitude0
     st.session_state['i'] = i
     st.session_state['x'] = P0
     st.session_state['y'] = A0
+    st.session_state['latitude'] = latitude0
+    st.session_state['longitude'] = longitude0
     st.success(f"장소: {x[i]}")
     st.info(f"답변: {y[i]}")
-        
+
 # 음식점 버튼
 if restaurant_btn_clicked:
     i = 0
     x = P1
     y = A1
+    latitude = latitude1
+    longitude = longitude1
     st.session_state['x'] = P1
     st.session_state['y'] = A1
     st.session_state['i'] = i
+    st.session_state['latitude'] = latitude1
+    st.session_state['longitude'] = longitude1
     st.success(f"장소: {x[i]}")
     st.info(f"답변: {y[i]}")
-    
+
 # 자연/공원 버튼
 if nature_btn_clicked:
     i = 0
     x = P2
     y = A2
+    latitude = latitude2
+    longitude = longitude2
     st.session_state['x'] = P2
     st.session_state['y'] = A2
     st.session_state['i'] = i
+    st.session_state['latitude'] = latitude2
+    st.session_state['longitude'] = longitude2
     st.success(f"장소: {x[i]}")
     st.info(f"답변: {y[i]}")
 
@@ -174,9 +194,13 @@ if cafe_btn_clicked:
     i = 0
     x = P3
     y = A3
+    latitude = latitude3
+    longitude = longitude3
     st.session_state['x'] = P3
     st.session_state['y'] = A3
     st.session_state['i'] = i
+    st.session_state['latitude'] = latitude3
+    st.session_state['longitude'] = longitude3
     st.success(f"장소: {x[i]}")
     st.info(f"답변: {y[i]}")
 
@@ -185,9 +209,13 @@ if expect_btn_clicked:
     i = 0
     x = P4
     y = A4
+    latitude = latitude4
+    longitude = longitude4
     st.session_state['x'] = P4
     st.session_state['y'] = A4
     st.session_state['i'] = i
+    st.session_state['latitude'] = latitude4
+    st.session_state['longitude'] = longitude4
     st.success(f"장소: {x[i]}")
     st.info(f"답변: {y[i]}")
 
@@ -196,47 +224,56 @@ if expo_btn_clicked:
     i = 0
     x = P5
     y = A5
+    latitude= latitude5
+    longitude = longitude5
     st.session_state['x'] = P5
     st.session_state['y'] = A5
     st.session_state['i'] = i
+    st.session_state['latitude'] = latitude5
+    st.session_state['longitude'] = longitude5
     st.success(f"장소: {x[i]}")
     st.info(f"답변: {y[i]}")
-    
-    
+
+
 if expo_next_btn_clicked: #다음 버튼
     if i >= len(x) -1 :
         i = len(x) -1
-        st.warning('마지막입니다.')
+        st.error('마지막 답변입니다.')
+        st.warning('이전 답변 버튼을 클릭해주십시오.')
     else :
         i += 1
         st.session_state['i'] = i
         st.success(f"장소: {x[i]}")
         st.info(f"답변: {y[i]}") 
-        
-           
+
+   
 if expo_back_btn_clicked: #이전 버튼
     if i <= 0 :
         i = 0
-        st.warning('처음입니다.')
+        st.error('처음 답변입니다.')
+        st.warning('다음 답변 버튼을 클릭해주십시오.')
     else:
         i -= 1
         st.session_state['i'] = i
         st.success(f"장소: {x[i]}")
         st.info(f"답변: {y[i]}")
-        
-# 부산 중심 좌표
-center_lat, center_lon = 35.1594965345398, 129.162576586723
-
-# Folium 지도 객체 생성
-st.title('해운대의 지도')
-
-m = folium.Map(location=[35.162336558296, 129.17479991912842], zoom_start=14)
-
-folium.Marker(location=[35.162336558296, 129.17479991912842]).add_to(m)
-
-st_data = st_folium(m, width=725)
+ 
+st.title('부산의 지도')
 
 
-st.title('해운대의 주소')
-st.write('부산광역시 해운대구')
+ 
+latitude_value = latitude[i]
+longitude_value = longitude[i]
 
+
+data = pd.DataFrame({
+'latitude': [latitude_value],
+'longitude': [longitude_value]
+})
+st.map(data)
+
+
+
+# 두 번째 탭에 해운대 지도 추가
+
+st.warning('미완')
