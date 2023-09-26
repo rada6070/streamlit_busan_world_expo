@@ -274,7 +274,7 @@ st.title('부산의 지도')
 latitude_value = latitude[i]
 longitude_value = longitude[i]
 
-m = folium.Map(location=[latitude_value, longitude_value], zoom_start=18, use_column_width=True, use_column_height=True, width=700, height=700)
+m = folium.Map(location=[latitude_value, longitude_value], zoom_start=15, use_column_width=True, use_column_height=True, width=700, height=700)
 
 folium.Marker(
     location=[latitude_value, longitude_value],
