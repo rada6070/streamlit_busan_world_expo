@@ -49,6 +49,8 @@ with col1 :
 with col2 :
     st.write('1')
 
+st.title('EXPO 챗봇')
+
 i = st.session_state.get('i', 0)
 x = st.session_state.get('x', 0)
 y = st.session_state.get('y', 0)
