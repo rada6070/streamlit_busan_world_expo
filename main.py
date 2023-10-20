@@ -167,8 +167,8 @@ if tourist_btn_clicked:
     st.session_state['y'] = A0
     st.session_state['latitude'] = latitude0
     st.session_state['longitude'] = longitude0
-    st.success(f"language["place"]: {x[i]}")
-    st.info(f"language["answer"]: {y[i]}")
+    st.success(f'language["place"]: {x[i]}')
+    st.info(f'language["answer"]: {y[i]}')
 
 # 음식점 버튼
 if restaurant_btn_clicked:
@@ -182,8 +182,8 @@ if restaurant_btn_clicked:
     st.session_state['i'] = i
     st.session_state['latitude'] = latitude1
     st.session_state['longitude'] = longitude1
-    st.success(f"language["place"]: {x[i]}")
-    st.info(f"language["answer"]: {y[i]}")
+    st.success(f'language["place"]: {x[i]}')
+    st.info(f'language["answer"]: {y[i]}')
 
 # 자연/공원 버튼
 if nature_btn_clicked:
@@ -197,8 +197,8 @@ if nature_btn_clicked:
     st.session_state['i'] = i
     st.session_state['latitude'] = latitude2
     st.session_state['longitude'] = longitude2
-    st.success(f"language["place"]: {x[i]}")
-    st.info(f"language["answer"]: {y[i]}")
+    st.success(f'language["place"]: {x[i]}')
+    st.info(f'language["answer"]: {y[i]}')
 
 # 카페/디저트 버튼
 if cafe_btn_clicked:
@@ -212,8 +212,8 @@ if cafe_btn_clicked:
     st.session_state['i'] = i
     st.session_state['latitude'] = latitude3
     st.session_state['longitude'] = longitude3
-    st.success(f"language["place"]: {x[i]}")
-    st.info(f"language["answer"]: {y[i]}")
+    st.success(f'language["place"]: {x[i]}')
+    st.info(f'language["answer"]: {y[i]}')
 
 # 기대효과 버튼
 if expect_btn_clicked:
@@ -227,8 +227,8 @@ if expect_btn_clicked:
     st.session_state['i'] = i
     st.session_state['latitude'] = latitude4
     st.session_state['longitude'] = longitude4
-    st.success(f"language["place"]: {x[i]}")
-    st.info(f"language["answer"]: {y[i]}")
+    st.success(f'language["place"]: {x[i]}')
+    st.info(f'language["answer"]: {y[i]}')
 
 # 엑스포 버튼
 if expo_btn_clicked:
@@ -242,8 +242,8 @@ if expo_btn_clicked:
     st.session_state['i'] = i
     st.session_state['latitude'] = latitude5
     st.session_state['longitude'] = longitude5
-    st.success(f"language["place"]: {x[i]}")
-    st.info(f"language["answer"]: {y[i]}")
+    st.success(f'language["place"]: {x[i]}')
+    st.info(f'language["answer"]: {y[i]}')
 
 
 if expo_next_btn_clicked: #다음 버튼
@@ -254,8 +254,8 @@ if expo_next_btn_clicked: #다음 버튼
     else :
         i += 1
         st.session_state['i'] = i
-        st.success(f"language["place"]: {x[i]}")
-        st.info(f"language["answer"]: {y[i]}") 
+        st.success(f'language["place"]: {x[i]}')
+        st.info(f'language["answer"]: {y[i]}') 
 
    
 if expo_back_btn_clicked: #이전 버튼
@@ -266,8 +266,8 @@ if expo_back_btn_clicked: #이전 버튼
     else:
         i -= 1
         st.session_state['i'] = i
-        st.success(f"language["place"]: {x[i]}")
-        st.info(f"language["answer"]: {y[i]}")
+        st.success(f'language["place"]: {x[i]}')
+        st.info(f'language["answer"]: {y[i]}')
  
 st.title(language["3_title"])
  
