@@ -25,7 +25,15 @@ from streamlit_folium import st_folium, folium_static
 from streamlit_option_menu import option_menu
 from streamlit_js_eval import get_browser_language
 
-
+with col2 :
+    language_select = str(
+        st.selectbox("Change Language", ["브라우저 기본 설정", *language_list])
+    )
+    
+    if language_select == "브라우저 기본 설정":
+        language = i18n.LoadLangByCode(preferred_language)
+    else:
+        language = i18n.LoadLangByCode(i18n.LangList(language_select))
 
 assets.import_assets("assets/style.css", st)
 
@@ -53,15 +61,7 @@ with col1 :
     with col13 :
         st.write(' ')
 
-with col2 :
-    language_select = str(
-        st.selectbox("Change Language", ["브라우저 기본 설정", *language_list])
-    )
-    
-    if language_select == "브라우저 기본 설정":
-        language = i18n.LoadLangByCode(preferred_language)
-    else:
-        language = i18n.LoadLangByCode(i18n.LangList(language_select))
+
 
 
 st.title(language["2_title"])
