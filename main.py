@@ -90,7 +90,16 @@ longitude = st.session_state.get('longitude', [129.162576586723])
 
 # 첫번째 탭에 챗봇 영역 추가
 
-df = pd.read_excel("data.xlsx")
+if language_select == 'en' :
+    df = pd.read_excel("data_english.xlsx")
+if language_select == 'ja' :
+    df = pd.read_excel("data_jp.xlsx")
+if language_select == 'zh' :
+    df = pd.read_excel("data_chinese.xlsx")
+if language_select == 'ko' :
+    df = pd.read_excel("data_korean.xlsx")
+else :
+    df = pd.read_excel("data_korean.xlsx")
 
 def tourist_data():
     spots_df = df[df['분류'] == '관광지']
