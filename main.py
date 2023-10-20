@@ -25,6 +25,8 @@ from streamlit_folium import st_folium, folium_static
 from streamlit_option_menu import option_menu
 from streamlit_js_eval import get_browser_language
 
+col1, col2 = st.columns(2)
+
 with col2 :
     language_select = str(
         st.selectbox("Change Language", ["브라우저 기본 설정", *language_list])
@@ -47,7 +49,7 @@ language_list = list(i18n.LangList().keys())
 
 st.title(language["1_title"])
 
-col1, col2 = st.columns(2)
+
 
 with col1 :
     col11, col12, col13 = st.columns([1,6,1])
