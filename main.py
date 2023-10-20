@@ -27,8 +27,12 @@ from streamlit_option_menu import option_menu
 from streamlit_js_eval import get_browser_language
 
 
-if need():
-    translate(st.secrets["DEEPL_APIKEY"])
+@st.cache_resource
+def conv():
+    target_langs = ["JA", "ZH", "EN", "KO"]
+    if need(target_langs):
+        translate(st.secrets["DEEPL_APIKEY"], target_langs)
+conv()
 
 
 try:

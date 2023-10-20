@@ -56,7 +56,7 @@ def DeepL_to_i18n(lang_code: str):
     return str(Language.find(language.display_name()))
 
 
-def need():
+def need(DEEPL_LANGUAGES=DEEPL_LANGUAGES):
     with open("i18n/_default.json", "r", encoding="UTF-8") as f:
         default_lang = json.loads(f.read())
     
@@ -66,8 +66,11 @@ def need():
         try:
             with open(f"i18n/{target_lang}.json", "r", encoding="UTF-8") as f:
                 target_lang = json.loads(f.read())
-        except Exception:
+        except Exception as e:
+            print(e)
             return True
+
+        print(sorted(default_lang.keys()) == sorted(target_lang.keys()))
 
         if (
             sorted(default_lang.keys()) == sorted(target_lang.keys())
@@ -77,7 +80,7 @@ def need():
             return True
 
 
-def main(API_KEY):
+def main(API_KEY, DEEPL_LANGUAGES=DEEPL_LANGUAGES):
     with open("i18n/_default.json", "r", encoding="UTF-8") as f:
         default_lang = json.loads(f.read())
 
@@ -87,9 +90,12 @@ def main(API_KEY):
 
         print(f"{target_lang} - DeepL로 번역 중...")
 
-        for key, vaule in default_lang.items():
-            translated[key] = DeepL(vaule, "KO", target_lang, API_KEY)
-            print(f"{target_lang}: {vaule} -> {translated[key]}")
+        if target_lang == 'ko':
+            translated = default_lang
+        else:
+            for key, vaule in default_lang.items():
+                translated[key] = DeepL(vaule, "KO", target_lang, API_KEY)
+                print(f"{target_lang}: {vaule} -> {translated[key]}")
 
         with open(f"i18n/{target_lang}.json", "w", encoding="UTF-8") as f:
             json.dump(translated, f, ensure_ascii=False, indent=4)
