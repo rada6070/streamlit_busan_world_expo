@@ -25,6 +25,13 @@ from streamlit_folium import st_folium, folium_static
 from streamlit_option_menu import option_menu
 from streamlit_js_eval import get_browser_language
 
+try:
+    preferred_language = i18n.FindLangByTag(get_browser_language())
+except AttributeError:
+    preferred_language = "ko"
+    
+language_list = list(i18n.LangList().keys())
+
 col1, col2 = st.columns(2)
 
 with col2 :
@@ -39,12 +46,7 @@ with col2 :
 
 assets.import_assets("assets/style.css", st)
 
-try:
-    preferred_language = i18n.FindLangByTag(get_browser_language())
-except AttributeError:
-    preferred_language = "ko"
-    
-language_list = list(i18n.LangList().keys())
+
 
 
 st.title(language["1_title"])
