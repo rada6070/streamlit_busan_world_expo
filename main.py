@@ -1,8 +1,17 @@
+import streamlit as st
+from translater import (main as translate, need)
+@st.cache_resource
+def Translating():
+    target_langs = ["JA", "ZH", "EN", "KO"]
+    if need(target_langs):
+        translate(st.secrets["DEEPL_APIKEY"], target_langs)
+Translating()
+
 import io
 import matplotlib
 import folium
 
-import streamlit as st
+
 import streamlit.components.v1 as html
 import numpy as np
 import pandas as pd
@@ -21,18 +30,9 @@ import openpyxl
 import googletrans
 
 from PIL import Image
-from translater import (main as translate, need)
 from streamlit_folium import st_folium, folium_static
 from streamlit_option_menu import option_menu
 from streamlit_js_eval import get_browser_language
-
-
-@st.cache_resource
-def conv():
-    target_langs = ["JA", "ZH", "EN", "KO"]
-    if need(target_langs):
-        translate(st.secrets["DEEPL_APIKEY"], target_langs)
-conv()
 
 
 try:
