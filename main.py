@@ -21,9 +21,15 @@ import openpyxl
 import googletrans
 
 from PIL import Image
+from translater import (main as translate, need)
 from streamlit_folium import st_folium, folium_static
 from streamlit_option_menu import option_menu
 from streamlit_js_eval import get_browser_language
+
+
+if need():
+    translate(st.secrets["DEEPL_APIKEY"])
+
 
 try:
     preferred_language = i18n.FindLangByTag(get_browser_language())

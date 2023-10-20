@@ -4,7 +4,6 @@ import requests
 from langcodes import Language
 
 
-API_KEY = ""
 DEEPL_LANGUAGES = [
     "BG",
     "CS",
@@ -37,7 +36,7 @@ DEEPL_LANGUAGES = [
 ]
 
 
-def DeepL(text, source, target):
+def DeepL(text, source, target, API_KEY):
     URL = "https://api-free.deepl.com/v2/translate"
     headers = {
         "Content-Type": "application/json",
@@ -57,7 +56,25 @@ def DeepL_to_i18n(lang_code: str):
     return str(Language.find(language.display_name()))
 
 
-def main():
+def need():
+    with open("i18n/_default.json", "r", encoding="UTF-8") as f:
+        default_lang = json.loads(f.read())
+    
+    for lang in DEEPL_LANGUAGES:
+        target_lang = DeepL_to_i18n(lang)
+
+        with open(f"i18n/{target_lang}.json", "r", encoding="UTF-8") as f:
+           target_lang = json.loads(f.read())
+
+        if (
+            sorted(default_lang.keys()) == sorted(target_lang.keys())
+        ):
+            return False
+        else:
+            return True
+
+
+def main(API_KEY):
     with open("i18n/_default.json", "r", encoding="UTF-8") as f:
         default_lang = json.loads(f.read())
 
@@ -68,7 +85,7 @@ def main():
         print(f"{target_lang} - DeepL로 번역 중...")
 
         for key, vaule in default_lang.items():
-            translated[key] = DeepL(vaule, "KO", target_lang)
+            translated[key] = DeepL(vaule, "KO", target_lang, API_KEY)
             print(f"{target_lang}: {vaule} -> {translated[key]}")
 
         with open(f"i18n/{target_lang}.json", "w", encoding="UTF-8") as f:
@@ -76,4 +93,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main("API_KEY HERE")
