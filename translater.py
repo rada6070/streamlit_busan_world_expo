@@ -63,8 +63,11 @@ def need():
     for lang in DEEPL_LANGUAGES:
         target_lang = DeepL_to_i18n(lang)
 
-        with open(f"i18n/{target_lang}.json", "r", encoding="UTF-8") as f:
-           target_lang = json.loads(f.read())
+        try:
+            with open(f"i18n/{target_lang}.json", "r", encoding="UTF-8") as f:
+                target_lang = json.loads(f.read())
+        except Exception:
+            return True
 
         if (
             sorted(default_lang.keys()) == sorted(target_lang.keys())
