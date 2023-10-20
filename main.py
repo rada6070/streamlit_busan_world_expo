@@ -99,7 +99,7 @@ if language_select == 'zh' :
 if language_select == 'ko' :
     df = pd.read_excel("data_korean.xlsx")
 else :
-    df = pd.read_excel("data_korean.xlsx")
+    df = pd.read_excel("data_jp.xlsx")
 
 def tourist_data():
     spots_df = df[df['분류'] == '관광지']
