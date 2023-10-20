@@ -37,7 +37,7 @@ except AttributeError:
 language_list = list(i18n.LangList().keys())
 
 
-st.title('부산 EXPO 관광지 추천')
+st.title(language["1_title"])
 
 col1, col2 = st.columns(2)
 
@@ -64,7 +64,7 @@ with col2 :
         language = i18n.LoadLangByCode(i18n.LangList(language_select))
 
 
-st.title('EXPO 챗봇')
+st.title(language["2_title"])
 
 i = st.session_state.get('i', 0)
 x = st.session_state.get('x', 0)
@@ -152,8 +152,8 @@ nature_btn_clicked = st.button(f'{Q2[0]}', key='nature_btn')
 cafe_btn_clicked = st.button(f'{Q3[0]}', key='cafe_btn')
 expect_btn_clicked = st.button(f'{Q4[0]}', key='expect_btn')
 expo_btn_clicked = st.button(f'{Q5[0]}', key='expo_btn')
-expo_next_btn_clicked = st.button('다음 답변', key='expo_next_btn')
-expo_back_btn_clicked = st.button('이전 답변', key='expo_back_btn')
+expo_next_btn_clicked = st.button(language["next"], key='expo_next_btn')
+expo_back_btn_clicked = st.button(language["prev"], key='expo_back_btn')
 
 # 관광지 버튼
 if tourist_btn_clicked:
@@ -167,8 +167,8 @@ if tourist_btn_clicked:
     st.session_state['y'] = A0
     st.session_state['latitude'] = latitude0
     st.session_state['longitude'] = longitude0
-    st.success(f"장소: {x[i]}")
-    st.info(f"답변: {y[i]}")
+    st.success(f"language["place"]: {x[i]}")
+    st.info(f"language["answer"]: {y[i]}")
 
 # 음식점 버튼
 if restaurant_btn_clicked:
@@ -182,8 +182,8 @@ if restaurant_btn_clicked:
     st.session_state['i'] = i
     st.session_state['latitude'] = latitude1
     st.session_state['longitude'] = longitude1
-    st.success(f"장소: {x[i]}")
-    st.info(f"답변: {y[i]}")
+    st.success(f"language["place"]: {x[i]}")
+    st.info(f"language["answer"]: {y[i]}")
 
 # 자연/공원 버튼
 if nature_btn_clicked:
@@ -197,8 +197,8 @@ if nature_btn_clicked:
     st.session_state['i'] = i
     st.session_state['latitude'] = latitude2
     st.session_state['longitude'] = longitude2
-    st.success(f"장소: {x[i]}")
-    st.info(f"답변: {y[i]}")
+    st.success(f"language["place"]: {x[i]}")
+    st.info(f"language["answer"]: {y[i]}")
 
 # 카페/디저트 버튼
 if cafe_btn_clicked:
@@ -212,8 +212,8 @@ if cafe_btn_clicked:
     st.session_state['i'] = i
     st.session_state['latitude'] = latitude3
     st.session_state['longitude'] = longitude3
-    st.success(f"장소: {x[i]}")
-    st.info(f"답변: {y[i]}")
+    st.success(f"language["place"]: {x[i]}")
+    st.info(f"language["answer"]: {y[i]}")
 
 # 기대효과 버튼
 if expect_btn_clicked:
@@ -227,8 +227,8 @@ if expect_btn_clicked:
     st.session_state['i'] = i
     st.session_state['latitude'] = latitude4
     st.session_state['longitude'] = longitude4
-    st.success(f"장소: {x[i]}")
-    st.info(f"답변: {y[i]}")
+    st.success(f"language["place"]: {x[i]}")
+    st.info(f"language["answer"]: {y[i]}")
 
 # 엑스포 버튼
 if expo_btn_clicked:
@@ -242,34 +242,34 @@ if expo_btn_clicked:
     st.session_state['i'] = i
     st.session_state['latitude'] = latitude5
     st.session_state['longitude'] = longitude5
-    st.success(f"장소: {x[i]}")
-    st.info(f"답변: {y[i]}")
+    st.success(f"language["place"]: {x[i]}")
+    st.info(f"language["answer"]: {y[i]}")
 
 
 if expo_next_btn_clicked: #다음 버튼
     if i >= len(x) -1 :
         i = len(x) -1
-        st.error('마지막 답변입니다.')
-        st.warning('이전 답변 버튼을 클릭해주십시오.')
+        st.error(language["end_er"])
+        st.warning(language["end_wa"])
     else :
         i += 1
         st.session_state['i'] = i
-        st.success(f"장소: {x[i]}")
-        st.info(f"답변: {y[i]}") 
+        st.success(f"language["place"]: {x[i]}")
+        st.info(f"language["answer"]: {y[i]}") 
 
    
 if expo_back_btn_clicked: #이전 버튼
     if i <= 0 :
         i = 0
-        st.error('처음 답변입니다.')
-        st.warning('다음 답변 버튼을 클릭해주십시오.')
+        st.error(language["top_er"])
+        st.warning(language["top_wa"])
     else:
         i -= 1
         st.session_state['i'] = i
-        st.success(f"장소: {x[i]}")
-        st.info(f"답변: {y[i]}")
+        st.success(f"language["place"]: {x[i]}")
+        st.info(f"language["answer"]: {y[i]}")
  
-st.title('부산의 지도')
+st.title(language["3_title"])
  
 latitude_value = latitude[i]
 longitude_value = longitude[i]
